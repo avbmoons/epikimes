@@ -1,2 +1,1 @@
-# epikimes
 Epics images catalog
