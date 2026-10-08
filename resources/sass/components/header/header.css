@@ -1,0 +1,125 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../../../public/assets/fonts/Roboto.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../../../../public/assets/fonts/Roboto.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+header {
+  margin: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+header .header-block {
+  margin: 0 auto;
+  width: 89%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-bottom: 1px solid #5A0402;
+}
+header .header-block .header-left {
+  margin: 0 auto;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header .header-block .header-left .site-title {
+  margin: 0 auto;
+  margin-left: 0;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #5A0402;
+  text-align: left;
+}
+header .header-block .header-left .site-title:hover {
+  color: #c0271e;
+}
+header .header-block .header-center {
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header .header-block .header-center .menu-block {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header .header-block .header-center .menu-block .menu-item {
+  margin: 0;
+  margin-right: 50px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #453B3A;
+  text-align: center;
+}
+header .header-block .header-center .menu-block .last {
+  margin-right: 0;
+}
+header .header-block .header-center .menu-block .menu-item:hover {
+  color: #c0271e;
+}
+header .header-block .header-right {
+  margin: 0 auto;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header .header-block .header-right .service-block {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+header .header-block .header-right .service-block .service-item {
+  margin: 0;
+  margin-right: 30px;
+  width: 36px;
+  height: 36px;
+}
+header .header-block .header-right .service-block .last {
+  margin-right: 0;
+}
+header .header-block .header-right .service-block .service-item:hover svg path {
+  fill: #c0271e;
+}/*# sourceMappingURL=header.css.map */

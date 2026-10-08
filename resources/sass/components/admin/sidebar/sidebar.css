@@ -1,0 +1,75 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../../../public/assets/fonts/Roboto.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../../../../../public/assets/fonts/Roboto.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.sidebar {
+  margin: 0 auto;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  background-color: #f7f3ef;
+}
+.sidebar .sidebar-menu-block {
+  margin: auto;
+  width: 87%;
+  height: 90%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box .menu-icon {
+  width: 20px;
+  height: 20px;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box .btn-menu-item {
+  margin: 0 auto;
+  margin-left: 0;
+  padding: 0 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: auto;
+  letter-spacing: 0;
+  color: #295173;
+  text-transform: uppercase;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box .active {
+  color: #c0271e;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box:hover .btn-menu-item {
+  color: #3D70AF;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box:hover .menu-icon path {
+  stroke: #3D70AF;
+}/*# sourceMappingURL=sidebar.css.map */

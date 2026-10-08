@@ -1,0 +1,122 @@
+@use 'sass:math';
+//@use "../../vars/vars.scss" as *;
+@use "../../../vars/vars.scss" as *;
+
+@font-face {
+  font-family: Roboto;
+  //src: url(../../../../public/assets/fonts/Roboto.ttf);
+  src: url(../../../../../public/assets/fonts/Roboto.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+@mixin headeradmin($font-family) {
+  header-admin {
+    margin: 0;
+    width: $header-width;
+    height: $header-height;
+    @include flex-vertical();
+    //border: 1px solid red;
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    .header-block-admin {
+      margin: 0 auto;
+      width: 100%;  // $block-width;
+      height: $header-height;
+      //background-color: yellow;
+      @include flex-horizontal();
+      justify-content: space-between;
+      border-bottom: 1px solid $color-blue;
+      //border-image: linear-gradient(to left, transparent 2%, $color-brown) 1;
+      .header-left-admin {
+        margin: 0 auto;
+        width: $header-left-width;
+        height: 100%;
+        //border: 1px solid green;
+        //border-right: 1px solid $color-blue;
+        background-color: $color-back-1;
+        @include flex-vertical();
+        .site-title-admin {
+          margin: 0 auto;
+          //margin-left: 0;
+          @include text-font(26px, 400, auto, 0);
+          text-decoration: none;
+          color: $color-blue;
+          text-align: center; // left;
+        }
+        .site-title:hover {
+          color: $color-red;
+        }
+      }
+      .header-center-admin {
+        margin: 0 auto;
+        width: $header-center-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .menu-block {
+          margin: 0 auto;
+          width: 100%;  
+          @include flex-horizontal();
+          //justify-content: space-around;
+          .menu-item-admin {
+            margin: 0;  
+            margin-right: 50px;
+            @include text-font(24px, 400, auto, 0);
+            text-decoration: none;
+            color: $color-grey-dark;
+            text-align: center;
+          }
+          .admin {
+            @include text-font(24px, 400, auto, 0);
+          }
+          .last {
+            margin-right: 0;
+          }
+          .menu-item-admin:hover {
+            color: $color-blue-light;
+          }
+        }
+      }
+      .header-right {
+        margin: 0 auto;
+        width: $header-right-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .service-block {
+          margin: 0 auto;
+          width: 100%;              
+          @include flex-horizontal();
+          justify-content: flex-end;            
+          .service-item-admin {
+            margin: 0;
+            margin-right: 30px;
+            width: fit-content; // 36px;
+            height: fit-content;  // 36px;
+            //border: 1px solid blue;
+            .sign-out-link {
+              //text-decoration: none;
+              @include text-font(20px, 400, auto, 0);
+              color: $color-blue;                
+            }              
+            .sign-out-link:hover {
+              color: $color-blue-light;
+            }              
+          }
+        }
+      }
+    }
+  }
+}
+
+@include headeradmin(Roboto);

@@ -1,0 +1,75 @@
+@use 'sass:math';
+//@use "../../vars/vars.scss" as *;
+@use "../../../vars/vars.scss" as *;
+
+@font-face {
+  font-family: Roboto;
+  //src: url(../../../../public/assets/fonts/Roboto.ttf);
+  src: url(../../../../../public/assets/fonts/Roboto.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+@mixin sidebar($font-family) {
+  .sidebar {
+    margin: 0 auto;
+    width: $header-left-width;
+    height: 100%;
+    @include flex-vertical();
+    justify-content: flex-start;
+    background-color: $color-back-1;
+    //border-right: 1px solid $color-blue;
+    .sidebar-menu-block {
+      margin: auto;
+      //margin-left: auto;
+      width: 87%;
+      height: 90%;  // auto;
+      overflow-y: auto;
+      @include flex-vertical();
+      justify-content: flex-start;
+      .sidebar-menu-box {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        width: 100%;
+        height: fit-content;
+        @include flex-horizontal();
+        justify-content: flex-start;
+        .menu-icon {
+          width: 20px;
+          height: 20px;
+        }
+        .btn-menu-item {
+          margin: 0 auto;
+          margin-left: 0;
+          padding: 0 20px;
+          text-decoration: none;
+          @include text-font(18px, 500, auto, 0);
+          color: $color-blue;
+          text-transform: uppercase;
+        }
+        .active {
+          color: $color-red;
+        }
+      }
+      .sidebar-menu-box:hover {
+        .btn-menu-item {
+          color: $color-blue-light;                  
+        }
+      }
+      .sidebar-menu-box:hover {
+        .menu-icon path {
+          stroke: $color-blue-light;
+        }
+      }
+    }
+  }
+}
+
+@include sidebar(Roboto);

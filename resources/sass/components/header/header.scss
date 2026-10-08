@@ -1,0 +1,116 @@
+@use 'sass:math';
+@use "../../vars/vars.scss" as *;
+
+@font-face {
+  font-family: Roboto;
+  src: url(../../../../public/assets/fonts/Roboto.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+@mixin headerfront($font-family) {
+  header {
+    margin: 0;
+    width: $header-width;
+    height: $header-height;
+    @include flex-vertical();
+    //border: 1px solid red;
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    //left: 0;
+    z-index: 9999;
+    .header-block {
+      margin: 0 auto;
+      width: $block-width;
+      height: $header-height;
+      //background-color: yellow;
+      @include flex-horizontal();
+      justify-content: space-between;
+      border-bottom: 1px solid $color-brown;
+      //border-image: linear-gradient(to left, transparent 2%, $color-brown) 1;
+      .header-left {
+        margin: 0 auto;
+        width: $header-left-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .site-title {
+          margin: 0 auto;
+          margin-left: 0;
+          @include text-font(36px, 400, auto, 0);
+          text-decoration: none;
+          color: $color-brown;
+          text-align: left;
+        }
+        .site-title:hover {
+          color: $color-red;
+        }
+      }
+      .header-center {
+        margin: 0 auto;
+        width: $header-center-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .menu-block {
+          margin: 0 auto;
+          width: 100%;  // auto;
+          @include flex-horizontal();
+          //justify-content: space-around;
+          .menu-item {
+            margin: 0;  // auto;
+            margin-right: 50px;
+            @include text-font(28px, 400, auto, 0);
+            text-decoration: none;
+            color: $color-grey-dark;
+            text-align: center;
+          }
+          .last {
+            margin-right: 0;
+          }
+          .menu-item:hover {
+            color: $color-red;
+          }
+        }
+      }
+      .header-right {
+        margin: 0 auto;
+        width: $header-right-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .service-block {
+          margin: 0 auto;
+          width: 100%;  // auto;            
+          @include flex-horizontal();
+          justify-content: flex-end;            
+          .service-item {
+            margin: 0;
+            margin-right: 30px;
+            width: 36px;
+            height: 36px;
+            //border: 1px solid blue;
+          }
+          .last {
+            margin-right: 0;
+          }
+          .service-item:hover {
+            svg path {
+              fill: $color-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include headerfront(Roboto);

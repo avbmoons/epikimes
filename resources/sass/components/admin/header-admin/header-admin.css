@@ -1,0 +1,137 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../../../public/assets/fonts/Roboto.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../../../../../public/assets/fonts/Roboto.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+header-admin {
+  margin: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+header-admin .header-block-admin {
+  margin: 0 auto;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-bottom: 1px solid #295173;
+}
+header-admin .header-block-admin .header-left-admin {
+  margin: 0 auto;
+  width: 25%;
+  height: 100%;
+  background-color: #f7f3ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header-admin .header-block-admin .header-left-admin .site-title-admin {
+  margin: 0 auto;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #295173;
+  text-align: center;
+}
+header-admin .header-block-admin .header-left-admin .site-title:hover {
+  color: #c0271e;
+}
+header-admin .header-block-admin .header-center-admin {
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header-admin .header-block-admin .header-center-admin .menu-block {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header-admin .header-block-admin .header-center-admin .menu-block .menu-item-admin {
+  margin: 0;
+  margin-right: 50px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #453B3A;
+  text-align: center;
+}
+header-admin .header-block-admin .header-center-admin .menu-block .admin {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+}
+header-admin .header-block-admin .header-center-admin .menu-block .last {
+  margin-right: 0;
+}
+header-admin .header-block-admin .header-center-admin .menu-block .menu-item-admin:hover {
+  color: #3D70AF;
+}
+header-admin .header-block-admin .header-right {
+  margin: 0 auto;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header-admin .header-block-admin .header-right .service-block {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+header-admin .header-block-admin .header-right .service-block .service-item-admin {
+  margin: 0;
+  margin-right: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+header-admin .header-block-admin .header-right .service-block .service-item-admin .sign-out-link {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  color: #295173;
+}
+header-admin .header-block-admin .header-right .service-block .service-item-admin .sign-out-link:hover {
+  color: #3D70AF;
+}/*# sourceMappingURL=header-admin.css.map */

@@ -1,0 +1,176 @@
+@use "sass:math";
+
+@use "../../vars/vars.scss" as *;
+@use "../../components/header/header.scss" as *;
+@use "../../components/footer/footer.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.wrapper {
+  margin: 0;
+  width: $site-width;
+  height: auto;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: space-between;
+    flex-grow: 1;
+
+    @include headerfront(Roboto);
+
+    main {
+      margin: 0;
+      width: $site-width;
+      min-height: $min-main-height;
+      @include flex-vertical();
+      //border: 1px solid green;
+      .greeting-block {
+        margin: 0 auto;
+        width: $block-width;
+        height: 25vh;
+        //border: 1px solid blue;
+        @include flex-horizontal();
+        .title-link-block {
+          margin: auto;
+          margin-top: 60px;
+          width: $header-left-width;
+          .title-link {
+            @include text-font(30px, 400, auto, 0);
+            color: $color-brown;
+            text-decoration: none;
+          }
+          .title-link:hover {
+            color: $color-red;
+          }
+        }
+        .greeting-text-block {
+          margin: auto;
+          margin-top: 60px;
+          width: $header-center-width;
+          .greeting-text {
+            white-space: pre-line;
+            text-align: center;
+            @include text-font(20px, 400, 24px, 0);
+            color: $color-grey-dark;
+          }
+        }
+        .resource-link-block {
+          margin: auto;
+          margin-top: 60px;
+          width: $header-right-width;
+          //border: 1px solid green;
+          @include flex-horizontal();
+          justify-content: flex-end;
+          .resource-link {
+            border-bottom: 3px solid $color-grey-dark;
+          }
+          .resource-link:hover {
+            border-color: $color-red;
+          }
+        }
+      }
+      .collage-block {
+        margin: 0 auto;
+        width: $block-width;
+        height: 50vh;
+        //border: 1px solid blueviolet;
+        @include flex-horizontal();
+        position: relative;
+        .collage-img {
+          margin: 0 auto;
+          //width: 83%;
+          height: 100%; // auto; // 100%;
+          transition: filter 0.3s ease;
+          @include flex-vertical();          
+        }
+        .collage-link {
+          margin: auto;
+          width: 83%;
+          text-decoration: none;
+          text-align: center;
+          @include text-font(26px, 500, auto, 0);
+          color: $color-yellow;
+          position: absolute;
+          top: 48%;
+          //display: none;
+          opacity: 0;
+        }
+        .collage-link:hover {
+          color: $color-orange;
+        }
+      }
+      .collage-block:hover {
+        .collage-link {
+          opacity: 1;
+        }
+        .collage-img {
+          filter: brightness(50%);
+        }
+      }
+      .news-block {
+        margin: 0 auto;
+        margin-bottom: 80px;  // 100px;
+        width: $block-width;
+        height: auto;
+        min-height: 15vh;
+        //border: 1px solid violet;
+        @include flex-vertical();
+        .title-link-block {
+          margin: 0 auto;
+          margin-top: 40px;
+          width: 100%;  // $header-left-width;
+          .title-link {
+            @include text-font(30px, 400, auto, 0);
+            color: $color-brown;
+            text-decoration: none;
+          }
+          .title-link:hover {
+            color: $color-red;
+          }
+        }
+        .new-images-block {
+          margin: 60px auto;
+          width: 83%; //100%;
+          height: auto;
+          @include flex-horizontal();
+          justify-content: space-between;
+          .new-image-card {
+            margin: auto;
+            height: 40vh; // 35vh;
+            width: 23%;
+            border: 1px solid $color-back-2;
+            @include flex-vertical();
+            box-shadow: -2px -4px 4px rgba(69, 59, 58, 0.15),
+                        2px 0 4px rgba(69, 59, 58, 0.15);
+            .new-image-card-block {
+              margin: 0 auto;
+              width: 87%;
+              height: 87%;
+              //border: 1px solid black;
+              @include flex-vertical();
+              .image-item {
+                width: 100%;  // auto;  // 100%;
+                height: 100%; // auto;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include footerfront(Roboto);
+
+}

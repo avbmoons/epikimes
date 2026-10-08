@@ -1,0 +1,89 @@
+@use "sass:math";
+@use "sass:list";
+
+$site-width: 100%;
+
+$block-width: 89%;
+
+$header-width: $site-width;
+$header-center-width: 50%;
+$header-left-width: 25%;
+$header-right-width: 25%;
+$header-height: 10vh;
+
+$footer-width: $site-width;
+$footer-center-width: 50%;
+$footer-left-width: 25%;
+$footer-right-width: 25%;
+$footer-height: 15vh;
+$footer-height-admin: 8vh;
+
+$main-width: $block-width;
+$min-main-height: 100vh - $header-height - $footer-height;
+//$min-main-height-admin: 100vh - $header-height-admin - $footer-height-admin;
+
+$color-back-1: #f7f3ef; //rgb(247, 243, 239)
+$color-back-2: #d2d0cf; //rgb(210, 208, 207)
+$color-back-3: #b5b0a1; //rgb(181, 176, 161)
+$color-back-4: #8a8a8b; //rgb(138, 138, 139)
+
+$color-red: #c0271e;  //rgb(192, 39, 30)
+$color-red-light: #ee4959;  //rgb(238, 73, 89)
+$color-brown: #5A0402;  //rgb(90, 4, 2)
+$color-yellow: #F9E352; //rgb(249, 227, 82)
+$color-orange: #EF9C33; //rgb(239, 156, 51)
+$color-blue: #295173; //rgb(41, 81, 115)
+$color-blue-light: #3D70AF; //rgb(61, 112, 175)
+$color-green: #30522F;  //rgb(48, 82, 47)
+$color-grey-dark: #453B3A;  //rgb(69, 59, 58)
+$color-grey-light: #837E7B; //rgb(131, 126, 123)
+$color-white: #ffffff;  //rgb(255, 255, 255)
+
+@font-face {
+  font-family: Roboto;
+  src: url(../../../public/assets/fonts/Roboto.ttf);
+}
+
+@mixin flex-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@mixin flex-horizontal {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@mixin text-font($font-size, $font-weight, $line-height, $letter-spacing) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin media-mobile {
+  @media only screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin media-desk {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-phone {
+  @media only screen and (max-width: 376px) {
+    @content;
+  }
+}
+
+@mixin media-smart {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
