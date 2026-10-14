@@ -1,20 +1,11 @@
 @use 'sass:math';
-//@use "../../vars/vars.scss" as *;
+
 @use "../../../vars/vars.scss" as *;
 
-@font-face {
-  font-family: Roboto;
-  //src: url(../../../../public/assets/fonts/Roboto.ttf);
-  src: url(../../../../../public/assets/fonts/Roboto.ttf);
-}
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 @mixin footeradmin($font-family) {
@@ -99,4 +90,4 @@ body {
   }
 }
 
-@include footeradmin(Roboto);
+@include footeradmin('Roboto');

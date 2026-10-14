@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.add-block {
+  margin: 0 auto;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.add-block .add-box {
+  margin: 0 auto;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+.add-block .add-box .btn-add {
+  background: none;
+  border: none;
+  border-radius: 3px;
+  color: #b5b0a1;
+  cursor: pointer;
+}
+.add-block .add-box .btn-add .img-add:hover path {
+  fill: #EF9C33;
+}
+.add-block .add-box .lable-add {
+  margin-right: 30px;
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0;
+  color: #453B3A;
+}
+.add-block .add-box:hover .btn-add .img-add path {
+  fill: #EF9C33;
+}
+.add-block .add-box:hover .lable-add {
+  color: #EF9C33;
+}/*# sourceMappingURL=add-item.css.map */

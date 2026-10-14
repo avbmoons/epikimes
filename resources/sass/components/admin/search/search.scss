@@ -1,0 +1,80 @@
+@use 'sass:math';
+
+@use "../../../vars/vars.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+@mixin searchblock($font-family) {
+  .search-block {
+    margin: 0 auto;
+    width: 70%; //34vw; 
+    height: 100%;
+    @include flex-vertical();
+    border: 1px solid $color-back-4;
+    border-radius: 5px;
+    .search-box {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%; 
+      @include flex-horizontal();
+      justify-content: flex-end;
+      .input-search {
+        padding-left: 10px;
+        //min-width: 90%;
+        width: 90%;
+        height: 95%;  // 100%;
+        @include text-font(14px, 300, 14px, 0);
+        border: none;
+        //border: 1px solid $color-back-4;
+        border-radius: 5px;
+      }
+      .input-search::placeholder {
+        @include text-font(14px, 200, 14px, 0);
+        color: $color-back-2;
+      }
+      .input-search:focus {
+        border: 2px solid $color-orange;
+        outline: none;
+      }
+      .btn-search {
+        padding: 0 5px;
+        height: 100%;
+        background: none;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        svg {
+          width: auto;
+          height: 70%;
+        }
+      }
+      .btn-search:hover {
+        svg path {
+          stroke: $color-orange;
+        }
+        //background-color: $color-red;
+      }
+      .link {
+        margin: 0 10px;
+        padding: 0 10px;
+        height: 100%;
+        text-decoration: none;
+        @include text-font(24px, 300, auto, 0);
+        color: $color-back-4;
+        align-content: center;
+      }
+      .link:hover {
+        color: $color-orange;
+      }
+    }
+  }
+}
+
+@include searchblock('Roboto');

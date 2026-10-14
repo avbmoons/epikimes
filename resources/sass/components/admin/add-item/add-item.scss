@@ -1,0 +1,57 @@
+@use 'sass:math';
+
+@use "../../../vars/vars.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+@mixin addblock($font-family) {
+  .add-block {
+          margin: 0 auto;
+          width: 30%; //15vw; 
+          height: 100%;
+          @include flex-vertical();
+          //border: 1px solid brown;
+          .add-box {
+            margin: 0 auto;
+            width: 100%;
+            height: inherit;
+            @include flex-horizontal();
+            justify-content: flex-end;
+            .btn-add {
+              background: none;
+              border: none;
+              border-radius: 3px;
+              color: $color-back-3;
+              cursor: pointer;
+              //border: 1px solid green;
+              .img-add:hover path {
+                fill: $color-orange;
+              }
+            }
+            .lable-add {
+              margin-right: 30px; // 5vw;
+              padding-left: 1vw;
+              @include flex-vertical();
+              //@include text-font(2vh, 300, 2vh, 0);
+              @include text-font(14px, 400, 14px, 0);
+              color: $color-grey-dark;
+              //border: 1px solid green;
+            }
+          }
+          .add-box:hover .btn-add .img-add path {
+            fill: $color-orange;
+          }
+          .add-box:hover .lable-add {
+            color: $color-orange;
+          }
+        }
+}
+
+@include addblock(Roboto);

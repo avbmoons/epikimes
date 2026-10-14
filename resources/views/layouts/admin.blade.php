@@ -20,7 +20,9 @@
       <main-admin>
         <div class="main-block">
           <x-admin.sidebar></x-admin.sidebar>
-          <div class="admin-content"></div>
+          <div class="admin-content">
+            @yield('content')
+          </div>
         </div>
       </main-admin>
     </div>

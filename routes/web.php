@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AboutController as AdminAboutController;
 use App\Http\Controllers\Admin\UsersController as AdminUsersController;
 use App\Http\Controllers\Admin\MailsController as AdminMailsController;
 use App\Http\Controllers\Admin\NotificationsController as AdminNotificationsController;
+use App\Http\Controllers\Admin\ColorsController as AdminColorsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\AboutController;
@@ -42,10 +43,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function() {
     Route::resource('users', AdminUsersController::class);
     Route::resource('mails', AdminMailsController::class);
     Route::resource('notifications', AdminNotificationsController::class);
+    Route::resource('colors', AdminColorsController::class);
 });
 
 Route::group(['prefix' => ''], static function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
+        Route::get('/catalog/one/{id}', [CatalogController::class, 'show'])
+            ->where(name: 'id', expression: '\d+')->name("itemId");
     Route::get('/about', [AboutController::class, 'index'])->name('about');
 });

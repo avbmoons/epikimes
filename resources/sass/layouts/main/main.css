@@ -1,18 +1,6 @@
-@font-face {
-  font-family: Roboto;
-  src: url(../../../public/assets/fonts/Roboto.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  src: url(../../../../public/assets/fonts/Roboto.ttf);
-}
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 header {
@@ -124,17 +112,9 @@ header .header-block .header-right .service-block .service-item:hover svg path {
   fill: #c0271e;
 }
 
-@font-face {
-  font-family: Roboto;
-  src: url(../../../../public/assets/fonts/Roboto.ttf);
-}
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 footer {
@@ -327,10 +307,6 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 .wrapper {

@@ -1,20 +1,11 @@
 @use 'sass:math';
-//@use "../../vars/vars.scss" as *;
+
 @use "../../../vars/vars.scss" as *;
 
-@font-face {
-  font-family: Roboto;
-  //src: url(../../../../public/assets/fonts/Roboto.ttf);
-  src: url(../../../../../public/assets/fonts/Roboto.ttf);
-}
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 @mixin sidebar($font-family) {
@@ -55,7 +46,10 @@ body {
           text-transform: uppercase;
         }
         .active {
-          color: $color-red;
+          color: $color-orange;
+          path {
+            stroke: $color-orange;
+          }
         }
       }
       .sidebar-menu-box:hover {

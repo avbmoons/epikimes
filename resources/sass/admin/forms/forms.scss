@@ -1,0 +1,308 @@
+@use 'sass:math';
+
+@use "../../vars/vars.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+  .forms-head-block {
+    margin: 0 auto;
+    margin-top: 20px;
+    //margin-right: 15vw;
+    padding: 20px 0;
+    width: 60vw;    
+    height: 80px;
+    @include flex-horizontal();
+    justify-content: space-between;
+    //border: 1px solid red;
+    .title-block {
+      margin: 0 auto;
+      width:100%;  
+      height: 100%;
+      @include flex-vertical();
+      //border: 1px solid green;
+      .title-box {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%; // auto;
+        @include flex-horizontal();
+        justify-content: flex-start;
+        //border: 1px solid orange;
+        .title {
+          @include text-font(24px, 400, 24px, 0);
+          color: $color-grey-dark;
+        }
+      }
+    }
+  }
+  .alert {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    //margin-right: 15vw;
+    padding: 5px;
+    width: 60vw;
+    @include flex-horizontal();
+    justify-content: space-between;
+    @include text-font(16px, 300, 16px, 0);
+    color: $color-red;
+    border: 1px solid $color-back-2;
+    background-color: $color-back-2;
+    border-radius: 5px;
+    align-items: center;
+    .close {
+      height: 100%;
+      width: auto;
+      border: none;
+      background: none;
+      color: $color-red;
+      @include flex-vertical();
+      align-items: center;
+      span {
+        font-size: 24px;
+        display: none;
+      }
+    }
+  }
+  .form-input {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 90px;
+    //margin-right: 15vw;
+    width: 60vw;    
+    height: auto;
+    border: 1px solid $color-back-2;  
+    border-radius: 5px;
+    @include flex-vertical();
+    justify-content: space-around;
+    //background-color: grey;
+    .input-box {
+      margin: 0 auto;
+      margin-bottom: $input-marginb;
+      width: $input-width;
+      height: auto;
+      @include flex-vertical();
+      justify-content: space-between;
+      object-fit: contain;
+      //border: 1px solid green;
+      .input-lable {
+        margin: 0 auto;
+        width: 100%;
+        @include text-font(2.4vh, 400, 2.4vh, 0);
+        color: $color-back-4;
+      }
+      .input-text {
+        margin: 0 auto;
+        margin-top: $input-lable-marginb; // 10px;
+        padding-left: 10px;
+        width: 100%; 
+        height: $input-height;
+        @include text-font(14px, 300, 14px, 0);
+        color: $color-grey-dark;
+        border: 1px solid $color-back-2;
+        border-radius: 5px;
+        outline: none;
+        box-sizing: border-box;
+      }
+      .file-input {
+        width: 0.1px; 
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+      .file-label {
+        margin: auto; // 0 auto;
+        display: inline-block;
+        width: 25%;
+        height: 60px;
+        background-color: $color-grey-light;
+        border: 1px solid $color-back-2;
+        color: $color-white;  // black;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        align-content: center;
+      }
+      .file-label:hover {
+        color: white;
+        background-color: $color-back-3;
+      }
+      .file-name {
+        width: 65%;
+        margin-left: 10px;
+        color: orange;
+        align-content: center;
+      }
+      .combo-box {
+        height: 3*$input-height;
+      }
+      .input-text:focus {
+        border: 2px solid $color-orange;
+      }
+      .multiple {
+        height: auto;
+        min-height: 3*$input-height;
+      }
+      .notread {
+        background-color: $color-back-1;
+      }
+      .area {
+        min-height: 2*$input-height;
+        padding-top: 10px;
+        line-height: normal;
+        overflow-y: auto;
+      }
+      .link-page {
+        margin: 0 auto;
+        width: 100%;
+        @include text-font(2.4vh, 300, 2.4vh, 0);
+        text-decoration: none;
+        text-align: left;
+        color: $color-grey-dark;
+      }
+      .link-page:hover {
+        text-decoration: underline;
+      }
+      .btn-form {
+        margin: 0 auto;
+        margin-left: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: $form-btn-width;
+        height: $form-btn-height;
+        @include text-font(2.4vh, 300, 2.4vh, 0);
+        color: $color-grey-dark;
+        background-color: $color-back-2;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        @include flex-vertical();
+        text-decoration: none;
+        text-align: center;
+      }
+      .btn-form:hover {
+        background-color: $color-back-3;
+        color: $color-white;
+      } 
+      .cancel {
+        margin-right: 0;
+        margin-left: 20px;
+        color: $color-grey-dark;
+        background-color: $color-white;
+        border: 1px solid $color-grey-dark;
+        font-weight: 400;
+      }
+      .cancel:hover {
+        color: $color-red;
+        background-color: $color-back-2;
+        border: 1px solid $color-red;
+      }
+      .close-back {
+        margin-right: 0;
+        margin-left: 0; //20px;
+        color: $color-grey-dark;
+        background-color: $color-white;
+        border: 1px solid $color-grey-dark;
+        font-weight: 400;
+      }
+      .close-back:hover {
+        color: $color-white;  
+        background-color: $color-grey-dark; 
+        //border: 2px solid orange;
+      }
+      .image-preview {
+        // margin-bottom: 0;
+        // margin-top: 20px;
+        padding: 20px 0;
+        display: block;
+        height: 4*$input-height;
+        width: auto;
+        border: 1px solid $color-back-2;
+        border-radius: 5px;
+        object-fit: contain;
+      }
+    }
+    .input-group {
+      margin: 0 auto;
+      width: 100%;
+      @include flex-horizontal();
+      justify-content: space-between;
+      //border: 1px solid red;
+      .half {
+        margin-left: 0;
+        margin-right: 0;
+        width: 50%; 
+        .file {
+          padding-left: 0;
+          border: none;                        
+        }
+        .file::file-selector-button { 
+          margin-right: 20px; 
+          margin-left: 0;
+          padding: 0 20px;
+          height: $input-height;
+          cursor: pointer;
+          background-color: $color-grey-dark;
+          border: 1px solid $color-grey-dark;
+          border-radius: 5px;
+          color: $color-white;
+          height: 100%;
+        }
+        .file::file-selector-button:hover {
+          background-color: $color-back-2;
+          border-color: $color-back-3;
+          color: $color-grey-dark;                        
+        }
+      }
+      .middle {
+        margin: 0 auto;
+        width: 40%;
+        justify-content: flex-start;
+      }
+      .mini {
+        margin-right: 0;
+        margin-left: 0;
+        margin: 0 auto;
+        width: 30%;        
+      }
+      .edit {
+        width: 20%;
+      }
+      .dates {
+        background-color: $color-grey-light;
+      }
+    } 
+    .import-buttons {
+      margin: 0 auto;
+      width: 90%;
+    }            
+    .first {
+      margin-top: 40px;
+    } 
+    .admin {
+      margin-top: 20px;
+    }  
+    .show {
+      margin: 0 auto;
+      width: 90%; 
+      //border: 1px solid green;
+    } 
+    .file-button {
+      width: 100%;
+      padding: 20px 0;
+      margin-bottom: 0;
+      border: 1px solid $color-back-2;
+      border-radius: 5px;
+      @include flex-horizontal();
+      justify-content: space-between;
+      flex-direction: row;
+    }            
+  }
+  .admin {
+    margin-top: 0;
+  }
+

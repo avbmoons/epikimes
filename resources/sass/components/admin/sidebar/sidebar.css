@@ -1,18 +1,6 @@
-@font-face {
-  font-family: Roboto;
-  src: url(../../../public/assets/fonts/Roboto.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  src: url(../../../../../public/assets/fonts/Roboto.ttf);
-}
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 .sidebar {
@@ -65,7 +53,10 @@ body {
   text-transform: uppercase;
 }
 .sidebar .sidebar-menu-block .sidebar-menu-box .active {
-  color: #c0271e;
+  color: #EF9C33;
+}
+.sidebar .sidebar-menu-block .sidebar-menu-box .active path {
+  stroke: #EF9C33;
 }
 .sidebar .sidebar-menu-block .sidebar-menu-box:hover .btn-menu-item {
   color: #3D70AF;

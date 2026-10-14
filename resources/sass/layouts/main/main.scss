@@ -9,10 +9,6 @@
   padding: 0;
 }
 
-body {
-  font-family: Roboto;
-}
-
 .wrapper {
   margin: 0;
   width: $site-width;
@@ -27,7 +23,7 @@ body {
     justify-content: space-between;
     flex-grow: 1;
 
-    @include headerfront(Roboto);
+    @include headerfront('Roboto');
 
     main {
       margin: 0;
@@ -171,6 +167,6 @@ body {
     }
   }
 
-  @include footerfront(Roboto);
+  @include footerfront('Roboto');
 
 }

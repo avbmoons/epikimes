@@ -1,18 +1,10 @@
 @use 'sass:math';
 @use "../../vars/vars.scss" as *;
 
-@font-face {
-  font-family: Roboto;
-  src: url(../../../../public/assets/fonts/Roboto.ttf);
-}
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: Roboto;
 }
 
 @mixin headerfront($font-family) {
@@ -113,4 +105,4 @@ body {
   }
 }
 
-@include headerfront(Roboto);
+@include headerfront('Roboto');

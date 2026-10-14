@@ -9,6 +9,23 @@
 @use "components/admin/header-admin/header-admin.scss";
 @use "components/admin/footer-admin/footer-admin.scss";
 @use "components/admin/sidebar/sidebar.scss";
+@use "components/admin/search/search.scss";
+@use "components/admin/add-item/add-item.scss";
+@use "admin/forms/forms.scss";
+@use "admin/pages/pages.scss";
+@use "admin/start/start.scss";
+@use "pagination/pagination.scss";
 
-// //@import "fonts/roboto";
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto.ttf') format('truetype');
+}
+
+textarea, input, select, button {
+  font-family: 'Roboto', sans-serif;
+}
+
+*, ::before, ::after {
+  font-family: 'Roboto', sans-serif;
+}
 

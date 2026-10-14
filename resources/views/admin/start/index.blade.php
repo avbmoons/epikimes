@@ -2,7 +2,7 @@
 
 @section('title', 'Start')
 @section('content')
-  here admin start  
+  <p>here admin start</p>  
 @endsection
 
 @push('js')
