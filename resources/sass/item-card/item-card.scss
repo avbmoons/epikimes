@@ -1,0 +1,95 @@
+@use "sass:math";
+
+@use "../vars/vars.scss" as *;
+@use "../components/header/header.scss" as *;
+@use "../components/footer/footer.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.item-card-block {
+  margin: 0 auto;
+  width: $block-width;
+  min-height: 100vh - $header-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  //border: 1px solid red;
+  .item-card-image-box {
+    margin: 0 auto;
+    width: 100%;
+    height: $item-card-image-height;
+    @include flex-horizontal();
+    position: relative;
+    //border: 1px solid green;
+    .back-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .back-link:hover {
+      svg path {
+        fill: $color-back-4;
+      }
+    }
+    .item-card-image {
+      margin: auto;
+      height: 96%;
+      width: auto;
+      border: 1px solid $color-back-2;
+      border-radius: 5px;
+    }
+  }
+  .item-card-text-block {
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh - $header-height - $item-card-image-height;
+    @include flex-horizontal();
+    justify-content: space-between;
+    //border: 1px solid blue;
+    .text-left {
+      width: 20%;
+      @include flex-vertical();
+      justify-content: flex-start;
+      .text-title {
+        margin-bottom: 20px;
+        padding: 10px 0 0 10px;
+        @include text-font(24px, 400, auto, 0);
+        color: $color-brown;
+        white-space: pre-line;
+      }
+      .text-series {
+        padding: 10px 0 0 10px;
+        @include text-font(20px, 400, auto, 0);
+        color: $color-back-4;
+        white-space: pre-line;
+      }
+    }
+    .text-center {
+      width: 60%;
+      @include flex-vertical();
+      justify-content: space-between;
+      white-space: pre-line;
+      .text-description {
+        padding: 10px;
+        @include text-font(16px, 400, auto, 0);
+        color: $color-grey-dark;
+      }
+    }
+    .text-right {
+      width: 20%;
+      @include flex-vertical();
+      justify-content: flex-start;
+      .text-other {
+        //margin-bottom: 20px;
+        padding: 10px 10px 0 0;
+        @include text-font(18px, 400, auto, 0);
+        color: $color-grey-dark;
+        text-align: right;
+        white-space: pre-line;
+      }
+    }
+  }
+}

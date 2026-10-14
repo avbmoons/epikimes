@@ -17,13 +17,13 @@
     position: relative;
     .btn-up-block {
       position: absolute;
-      top: -100%; // 73vh; //  -50%;
+      top: -50vh;  // -80%; // 73vh; //  -50%;
       left: 93vw; // 93vw;  // 90%;
       z-index: 9999;
     }
     .btn-up-block:hover {
       svg path {
-        fill: $color-grey-light;
+        fill: $color-back-2;
       }
     }
     .footer-block {

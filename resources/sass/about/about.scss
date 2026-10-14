@@ -1,0 +1,95 @@
+@use "sass:math";
+
+@use "../vars/vars.scss" as *;
+@use "../components/header/header.scss" as *;
+@use "../components/footer/footer.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.top-block {
+        margin: 0 auto;
+        width: $block-width;
+        min-height: 0.5*($min-main-height + $footer-height);
+        @include flex-horizontal();
+        justify-content: space-between;
+        //border: 1px solid green;
+        .top-left-box {
+          margin: 0 auto;
+          height: 0.5*($min-main-height + $footer-height);  // 100%;
+          width: 50%;
+          @include flex-vertical();
+          //border: 1px solid violet;
+          .about-img {
+            height: 90%;
+            width: auto;
+            object-fit: contain;  // cover; // contain;
+          }
+        }
+        .top-right-box {
+          margin: 0 auto;
+          height: 100%;
+          width: 50%;
+          @include flex-vertical();
+          justify-content: flex-start;
+          //border: 1px solid orangered;
+          .about-title {
+            padding: 10px;  // 0 10px 0 10px;
+            @include text-font(24px, 400, auto, 0);
+            color: $color-brown;
+            text-align: left;
+            white-space: pre-line;
+          }
+          .about-text {
+            padding: 10px;
+            @include text-font(16px, 300, auto, 0);
+            color: $color-grey-dark;
+            text-align: left;
+            white-space: pre-line;
+          }
+        }
+      }
+      .bottom-block {
+        margin: 0 auto;
+        width: $block-width;
+        min-height: 0.5*($min-main-height + $footer-height);
+        //border: 1px solid green;
+        @include flex-horizontal();
+        justify-content: space-between;
+        .bottom-left-box {
+          margin: 0 auto;
+          height: 100%;
+          width: 50%;
+          @include flex-vertical();
+          justify-content: flex-start;
+          //border: 1px solid orangered;
+          .about-title {
+            padding: 10px;
+            @include text-font(24px, 400, auto, 0);
+            color: $color-brown;
+            text-align: left;
+            white-space: pre-line;
+          }
+          .about-text {
+            padding: 10px;
+            @include text-font(16px, 300, auto, 0);
+            color: $color-grey-dark;
+            text-align: left;
+            white-space: pre-line;
+          }
+        }
+        .bottom-right-box {
+          margin: 0 auto;
+          height: 0.5*($min-main-height + $footer-height);  // 100%;
+          width: 50%;
+          @include flex-vertical();
+          //border: 1px solid violet;
+          .about-img {
+            height: 90%;
+            width: auto;
+            object-fit: contain;  // cover;  // contain;
+          }
+        }
+      }

@@ -31,6 +31,20 @@
       min-height: $min-main-height;
       @include flex-vertical();
       //border: 1px solid green;
+      position: relative;
+      .btn-up-block {
+        width: fit-content;
+        position: sticky;
+        top: 90vh;  // -80%; // 73vh; //  -50%;
+        left: 93vw; // 93vw;  // 90%;
+        //right: 7vw;
+        z-index: 9999;
+      }
+      .btn-up-block:hover {
+        svg path {
+          fill: $color-back-4;
+        }
+      }
       .greeting-block {
         margin: 0 auto;
         width: $block-width;
@@ -39,7 +53,7 @@
         @include flex-horizontal();
         .title-link-block {
           margin: auto;
-          margin-top: 60px;
+          margin-top: $title-margin-top;  // 40px;
           width: $header-left-width;
           .title-link {
             @include text-font(30px, 400, auto, 0);
@@ -52,7 +66,7 @@
         }
         .greeting-text-block {
           margin: auto;
-          margin-top: 60px;
+          margin-top: $title-margin-top;  // 40px;
           width: $header-center-width;
           .greeting-text {
             white-space: pre-line;
@@ -63,7 +77,7 @@
         }
         .resource-link-block {
           margin: auto;
-          margin-top: 60px;
+          margin-top: $title-margin-top;  // 40px;
           width: $header-right-width;
           //border: 1px solid green;
           @include flex-horizontal();

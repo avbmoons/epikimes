@@ -16,12 +16,12 @@ footer {
 }
 footer .btn-up-block {
   position: absolute;
-  top: -100%;
+  top: -50vh;
   left: 93vw;
   z-index: 9999;
 }
 footer .btn-up-block:hover svg path {
-  fill: #837E7B;
+  fill: #d2d0cf;
 }
 footer .footer-block {
   margin: 0 auto;
