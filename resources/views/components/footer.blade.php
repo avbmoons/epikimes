@@ -13,7 +13,17 @@
               <p class="send-title">Send message:</p>
         </div>
         <div class="title-block">
-              <p class="copyrights">&copy; Pavel Alfimov. All rights reserved. 2026</p>
+          <p class="copyrights" id="copyrights">&copy; 
+                {{-- Pavel Alfimov.  --}}
+            @if (isset($footerElements['copyrights_owner']) &&  $footerElements['copyrights_owner']->is_visible)
+            {{ $footerElements['copyrights_owner']->title }}
+            @endif
+            All rights reserved. 
+            {{-- 2026 --}}
+            @if (isset($footerElements['copyrights_years']) &&  $footerElements['copyrights_years']->is_visible)
+            {{ $footerElements['copyrights_years']->title }}
+            @endif
+          </p>
         </div>            
       </div>
     </div>
@@ -35,7 +45,10 @@
           </a>
         </div>
         <div class="signature-block">
-          <img src="../../assets/images/signature.png" alt="signature" class="signature">
+          @if (isset($footerElements['signature_img']) && $footerElements['signature_img']->is_visible)
+            <img src="{{ asset('storage/elements/'.$footerElements['signature_img']->image_path) }}" alt="signature" class="signature" id="signatureImg">        
+          @endif
+          {{-- <img src="../../assets/images/signature.png" alt="signature" class="signature" id="signatureImg"> --}}
         </div>
       </div>
     </div>

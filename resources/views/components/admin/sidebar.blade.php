@@ -8,12 +8,12 @@
       </svg>
       <a href="{{ route('admin.index') }}" class="btn-menu-item @if(request()->routeIs('admin.index')) active @endif" >Start</a>
     </div>
-    <div class="sidebar-menu-box" id="menuHome">
+    <div class="sidebar-menu-box" id="menuPageElements">
       <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 8.22222L11 2L19 8.22222V18C19 18.4715 18.8127 18.9237 18.4793 19.2571C18.1459 19.5905 17.6937 19.7778 17.2222 19.7778H4.77778C4.30628 19.7778 3.8541 19.5905 3.5207 19.2571C3.1873 18.9237 3 18.4715 3 18V8.22222Z" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M8.33331 19.7778V10.8889H13.6666V19.7778" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <a href="{{ route('admin.home.index') }}" class="btn-menu-item @if(request()->routeIs('admin.home.index')) active @endif">Home</a>
+      <a href="{{ route('admin.elements.index') }}" class="btn-menu-item @if(request()->routeIs('admin.elements.index')) active @endif">Page elements</a>
     </div>
     <div class="sidebar-menu-box" id="menuAbout">
       <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

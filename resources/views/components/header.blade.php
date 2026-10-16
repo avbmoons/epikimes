@@ -1,8 +1,15 @@
 <header>
   <div class="header-block" id="headerBlock">
     <div class="header-left">
-      <a href="index.html" class="site-title">My Hobby Arts</a>
+      <a href="index.html" class="site-title" id="titleSite">
+        
+        @if (isset($headerElements['title_site']) && $headerElements['title_site']->is_visible)
+            {{ $headerElements['title_site']->title }}
+        @endif
+      </a>
+      
     </div>
+    {{-- My Hobby Arts --}}
     <div class="header-center">
       <div class="menu-block">
         <a href="{{ route('home') }}" class="menu-item">home</a>

@@ -559,7 +559,7 @@ body {
 }
 .wrapper .top main .greeting-block .title-link-block {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0;
   width: 25%;
 }
 .wrapper .top main .greeting-block .title-link-block .title-link {
@@ -575,7 +575,7 @@ body {
 }
 .wrapper .top main .greeting-block .greeting-text-block {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0;
   width: 50%;
 }
 .wrapper .top main .greeting-block .greeting-text-block .greeting-text {
@@ -588,7 +588,7 @@ body {
   color: #453B3A;
 }
 .wrapper .top main .greeting-block .search-admin-block {
-  margin-top: 20px;
+  margin-top: 0;
   width: 50%;
 }
 .wrapper .top main .greeting-block .search-admin-block .search-block {
@@ -672,7 +672,7 @@ body {
 }
 .wrapper .top main .greeting-block .resource-link-block {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0;
   width: 25%;
   display: flex;
   justify-content: center;

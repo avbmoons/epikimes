@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\StartController as AdminStartController;
-use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\PageElementsController as AdminPageElementsController;
 use App\Http\Controllers\Admin\CategoriesController as AdminCategoriesController;
 use App\Http\Controllers\Admin\CatalogController as AdminCatalogController;
 use App\Http\Controllers\Admin\AboutController as AdminAboutController;
@@ -36,7 +36,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function() {
     Route::resource('/', AdminStartController::class)->names(['index' => 'index',]);
-    Route::resource('home', AdminHomeController::class);
+    Route::resource('elements', AdminPageElementsController::class);
     Route::resource('categories', AdminCategoriesController::class);
     Route::resource('catalog', AdminCatalogController::class);
     Route::resource('about', AdminAboutController::class);

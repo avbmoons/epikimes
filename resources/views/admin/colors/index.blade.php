@@ -33,7 +33,17 @@
         <tr>
           <td>{{ $color->id }}</td>
           <td>{{ $color->title }}</td>
-          <td>{{ $color->description }}</td>
+          <td>
+            <span style="
+              display: inline-block; 
+              width: 16px; 
+              height: 16px; 
+              background-color:{{ $color->extracted_hex }}; 
+              border: 1px solid #ccc; 
+              border-radius: 3px;">
+            </span>&nbsp;
+            {{ $color->description }}
+          </td>
           {{-- <td>
             <div class="statuses">
               <p>{{ $color->status }}</p>

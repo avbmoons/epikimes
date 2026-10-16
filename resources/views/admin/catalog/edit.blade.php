@@ -118,16 +118,6 @@
     <script>
       function previewImage(event) {
         const input = event.target;
-        // const file = input.files[0];
-
-        // const preview = document.getElementById("image-preview");
-        // const fileNameSpan = document.getElementById("file-name");
-        // if (!file) {
-        //   return;
-        // }
-
-        // fileNameSpan.textContent = file.name;
-
         const reader = new FileReader();
 
         reader.onload = function() {
@@ -142,10 +132,7 @@
           if (spanFileName) {
             spanFileName.textContent = input.files[0].name;
           }
-        }
-        // if(event.target.files && event.target.files[0]) {
-        //   reader.readAsDataURL(event.target.files[0]);
-        // }          
+        }      
       }
     </script>
 @endpush

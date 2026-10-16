@@ -12,12 +12,22 @@
 
         <div class="greeting-block" id="greetingBlock">
           <div class="title-link-block">
-            <a href="pages/catalog.html" class="title-link">All arts catalog</a>
+            <a href="pages/catalog.html" class="title-link" id="titleLinkCatalog" style="color: {{ $elements['title_link_catalog']->color }}">
+              {{-- All arts catalog  --}}
+              @if (isset($elements['title_link_catalog']) && $elements['title_link_catalog']->is_visible)
+              {{ $elements['title_link_catalog']->title }}                
+              @endif
+            </a>
           </div>
           <div class="greeting-text-block">
-            <p class="greeting-text">Greetings, dear frends! 
+            <p class="greeting-text" id="welcomeText" style="color: {{ $elements['title_link_catalog']->color }}">
+              {{-- Greetings, dear frends! 
               Come share the inspiration sparkles
-              and take a look at my arts.</p>
+              and take a look at my arts. --}}
+              @if (isset($elements['welcome_text']) && $elements['welcome_text']->is_visible)
+              {{ $elements['welcome_text']->title }}                
+              @endif
+            </p>
           </div>
           <div class="resource-link-block">
             <a href="#">
@@ -26,12 +36,20 @@
           </div>
         </div>
         <div class="collage-block">
-          <img src="{{ asset('assets/images/collage.png') }}" alt="collage" class="collage-img">
+          @if (isset($elements['collage_img']) && $elements['collage_img']->is_visible)
+            <img src="{{ asset('storage/elements/'.$elements['collage_img']->image_path) }}" alt="image" class="collage-img" id="collageImg">        
+          @endif          
+          {{-- <img src="{{ asset('assets/images/collage.png') }}" alt="collage" class="collage-img" id="collageImg"> --}}
           <a href="pages/catalog.html" class="collage-link">&#9472;&#9472;&#9472;&nbsp;Go to Catalog&nbsp;&#9472;&#9472;&#9472;</a>
         </div>
         <div class="news-block">
           <div class="title-link-block">
-            <a href="#newImagesBlock" class="title-link">New arts</a>
+            <a href="#newImagesBlock" class="title-link" id="titleNews" style="color: {{ $elements['title_news']->color }}">
+              {{-- New arts --}}
+              @if (isset($elements['title_news']) && $elements['title_news']->is_visible)
+              {{ $elements['title_news']->title }}                
+              @endif
+            </a>
           </div>
           <div class="new-images-block" id="newImagesBlock">
             <div class="new-image-card">

@@ -760,6 +760,17 @@ body {
 .table-block table tbody tr td .show {
   display: none;
 }
+.table-block table tbody tr .td-title {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.table-block table tbody tr .td-title:hover {
+  white-space: normal;
+  overflow-y: visible;
+  white-space: pre-line;
+}
 .table-block table tbody tr .time-field {
   font-size: 12px;
   font-weight: 300;

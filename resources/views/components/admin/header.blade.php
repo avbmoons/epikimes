@@ -1,7 +1,13 @@
 <header-admin>
   <div class="header-block-admin" id="headerBlockAdmin">
     <div class="header-left-admin">
-      <a href="index.html" class="site-title-admin">My Hobby Arts. Admin</a>
+      <a href="index.html" class="site-title-admin">
+        {{-- My Hobby Arts --}}
+        @if (isset($headerElements['title_site']) && $headerElements['title_site']->is_visible)
+            {{ $headerElements['title_site']->title }}
+        @endif
+        . Admin
+      </a>
     </div>
     <div class="header-center-admin">
       <div class="menu-block">

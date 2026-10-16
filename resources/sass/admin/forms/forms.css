@@ -128,6 +128,10 @@
   outline: none;
   box-sizing: border-box;
 }
+.form-input .input-box .color {
+  width: 40px;
+  padding: 0;
+}
 .form-input .input-box .file-input {
   width: 0.1px;
   height: 0.1px;

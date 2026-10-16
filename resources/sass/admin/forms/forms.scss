@@ -105,6 +105,10 @@
         outline: none;
         box-sizing: border-box;
       }
+      .color {
+        width: $input-height;
+        padding: 0;
+      }
       .file-input {
         width: 0.1px; 
         height: 0.1px;

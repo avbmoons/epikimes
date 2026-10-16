@@ -170,6 +170,18 @@
               display: none;
             }
           }
+          .td-title {
+            max-width: 200px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            //white-space: pre-line;
+          }
+          .td-title:hover {
+            white-space: normal;
+            overflow-y: visible;
+            white-space: pre-line;
+          }
           .time-field {
             @include text-font(12px, 300, auto, 0);
           }
