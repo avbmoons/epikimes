@@ -94,6 +94,15 @@ final class ItemsQueryBuilder extends QueryBuilder
     return Item::query()->where('id', $id)->get();
   }
 
+  public function getNewItems(): Collection
+  {
+    return Item::query()
+      ->where('is_new', true)
+      ->whereNotNull('file_path')
+      ->where('file_path', '!=', '')
+      ->get();
+  }
+
   public function getItemsWithPagination(int $quantity = 10): LengthAwarePaginator
   {
     $search = request()->query('search');

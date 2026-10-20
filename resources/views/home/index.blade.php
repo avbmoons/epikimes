@@ -9,25 +9,16 @@
               </svg>
             </a>
         </div>
-
         <div class="greeting-block" id="greetingBlock">
           <div class="title-link-block">
-            <a href="pages/catalog.html" class="title-link" id="titleLinkCatalog" style="color: {{ $elements['title_link_catalog']->color }}">
-              {{-- All arts catalog  --}}
-              @if (isset($elements['title_link_catalog']) && $elements['title_link_catalog']->is_visible)
-              {{ $elements['title_link_catalog']->title }}                
-              @endif
-            </a>
+            @if (isset($elements['title_link_catalog']) && $elements['title_link_catalog']->is_visible)
+              <a href="pages/catalog.html" class="title-link" id="titleLinkCatalog" style="color: {{ $elements['title_link_catalog']->color }}">{{ $elements['title_link_catalog']->title }}</a>
+            @endif
           </div>
-          <div class="greeting-text-block">
-            <p class="greeting-text" id="welcomeText" style="color: {{ $elements['title_link_catalog']->color }}">
-              {{-- Greetings, dear frends! 
-              Come share the inspiration sparkles
-              and take a look at my arts. --}}
-              @if (isset($elements['welcome_text']) && $elements['welcome_text']->is_visible)
-              {{ $elements['welcome_text']->title }}                
-              @endif
-            </p>
+          <div class="greeting-text-block">            
+            @if (isset($elements['welcome_text']) && $elements['welcome_text']->is_visible)
+              <p class="greeting-text" id="welcomeText" style="color: {{ $elements['title_link_catalog']->color }}">{{ $elements['welcome_text']->title }}</p>               
+            @endif            
           </div>
           <div class="resource-link-block">
             <a href="#">
@@ -39,19 +30,48 @@
           @if (isset($elements['collage_img']) && $elements['collage_img']->is_visible)
             <img src="{{ asset('storage/elements/'.$elements['collage_img']->image_path) }}" alt="image" class="collage-img" id="collageImg">        
           @endif          
-          {{-- <img src="{{ asset('assets/images/collage.png') }}" alt="collage" class="collage-img" id="collageImg"> --}}
-          <a href="pages/catalog.html" class="collage-link">&#9472;&#9472;&#9472;&nbsp;Go to Catalog&nbsp;&#9472;&#9472;&#9472;</a>
+          <a href="{{ route('catalog') }}" class="collage-link">&#9472;&#9472;&#9472;&nbsp;Go to Catalog&nbsp;&#9472;&#9472;&#9472;</a>
         </div>
         <div class="news-block">
-          <div class="title-link-block">
+          <div class="title-link-block" style="margin-bottom: 50px;">
             <a href="#newImagesBlock" class="title-link" id="titleNews" style="color: {{ $elements['title_news']->color }}">
               {{-- New arts --}}
               @if (isset($elements['title_news']) && $elements['title_news']->is_visible)
               {{ $elements['title_news']->title }}                
               @endif
             </a>
-          </div>
-          <div class="new-images-block" id="newImagesBlock">
+          </div>          
+          @php
+            $totalImagesCount = $newItems->whereNotNull('file_path')->count();
+          @endphp
+
+          @if ($totalImagesCount > 0)
+            <div class="custom-slider" id="catalogSlider" data-total-images="{{ $totalImagesCount }}">
+              <div class="slider-viewport" id="newImagesBlock">
+                <div class="slider-track">
+                  @foreach ($newItems as $item)
+                    @if ($item->file_path)
+                      <div class="slider-slide">
+                        <div class="product-card">
+                          <img src="{{ asset('storage/catalog/'.$item->file_path) }}" alt="{{ $item->title }}">
+                          <span class="badge-new">New image</span>
+                          <p class="item-title-new">{{ $item->title }}</p>
+                        </div>
+                      </div>
+                    @endif  
+                  @endforeach
+                </div>
+              </div>
+              <button class="slider-btn prev-btn" aria-label="Prev">&#9668;&nbsp;</button>
+              <button class="slider-btn next-btn" aria-label="Next">&nbsp;&#9658;</button>
+              <div class="slider-dots"></div>
+            </div>  
+          @else
+            <p class="no-news">Nothing new images yet</p>
+          @endif
+
+
+          {{-- <div class="new-images-block" id="newImagesBlock">
             <div class="new-image-card">
               <div class="new-image-card-block">
                 <img src="assets/catalog/item-1.png" alt="image" class="image-item">
@@ -72,11 +92,189 @@
                 <img src="assets/catalog/item-11.png" alt="image" class="image-item">
               </div>              
             </div>           
-          </div>
+          </div> --}}
         </div>
 
 @endsection
 
 @push('js')
-<script></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('catalogSlider');
+    if (!slider) return;
+
+    // Читаем количество картинок из атрибута шаблона
+    const totalImages = parseInt(slider.getAttribute('data-total-images')) || 0;
+
+    // --- ЛОГИКА АВТОСТОПОРА ---
+    // Если новинок меньше 4, слайдер отключается и превращается в статичную сетку
+    if (totalImages < 4) {
+        slider.classList.add('not-enough-slides');
+        return; 
+    }
+
+    const track = slider.querySelector('.slider-track');
+    const prevBtn = slider.querySelector('.prev-btn');
+    const nextBtn = slider.querySelector('.next-btn');
+    const dotsContainer = slider.querySelector('.slider-dots');
+    
+    const originalSlides = Array.from(track.children);
+    const originalCount = originalSlides.length;
+
+    let currentIndex = 0;
+    let slidesPerView = getSlidesPerView();
+    let isTransitioning = false;
+
+    // Переменные свайпа
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    // 1. Бесконечное клонирование: вставляем копии оригиналов в начало и в конец
+    const clonesBefore = originalSlides.slice(-originalCount).map(el => el.cloneNode(true));
+    const clonesAfter = originalSlides.slice(0, originalCount).map(el => el.cloneNode(true));
+
+    clonesBefore.forEach(clone => track.insertBefore(clone, track.firstChild));
+    clonesAfter.forEach(clone => track.appendChild(clone));
+
+    // 2. Создание пагинации
+    for (let i = 0; i < originalCount; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            if (isTransitioning) return;
+            currentIndex = originalCount + i;
+            updatePosition(true);
+        });
+        dotsContainer.appendChild(dot);
+    }
+    const dots = dotsContainer.querySelectorAll('.dot');    
+
+    // Пропускаем левые клоны, встаем на реальный первый слайд
+    currentIndex = originalCount;
+    updatePosition(false);
+
+
+
+    // 3. Расчет позиции и сдвига трека в %
+    function updatePosition(animation = true) {
+        if (!animation) {
+            track.style.transition = 'none';
+        } else {
+            track.style.transition = 'transform 0.4s ease-in-out';
+            isTransitioning = true;
+        }
+
+        const slideWidthPercent = 100 / slidesPerView;
+        track.style.transform = `translateX(-${currentIndex * slideWidthPercent}%)`;
+        
+        updateDots();
+    }
+
+    function updateDots() {
+        dots.forEach(dot => dot.classList.remove('active'));
+        let realIndex = (currentIndex - originalCount) % originalCount;
+        if (realIndex < 0) realIndex += originalCount;
+        if (dots[realIndex]) dots[realIndex].classList.add('active');
+    }
+
+    // 4. Бесшовная подмена клона на оригинал (после завершения CSS-анимации)
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+
+        if (currentIndex >= originalCount * 2) {
+            currentIndex = currentIndex - originalCount;
+            updatePosition(false);
+        }
+        if (currentIndex < originalCount) {
+            currentIndex = currentIndex + originalCount;
+            updatePosition(false);
+        }
+    });
+
+    // 5. Клик по кнопкам
+    nextBtn.addEventListener('click', () => {
+        if (isTransitioning) return;
+        currentIndex++;
+        updatePosition(true);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (isTransitioning) return;
+        currentIndex--;
+        updatePosition(true);
+    });
+
+    // --- ЛОГИКА СВАЙПА (Touch на мобильных & Mouse на ПК) ---
+    function handleTouchStart(e) {
+        if (isTransitioning) return;
+        isDragging = true;
+        startX = e.type.includes('touch') ? e.touches.clientX : e.clientX;
+        track.style.transition = 'none'; // Отключаем анимацию при движении пальца
+    }
+
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        currentX = e.type.includes('touch') ? e.touches.clientX : e.clientX;
+        const diffX = currentX - startX;
+
+        // Двигаем ленту вслед за пальцем/курсором
+        const slideWidthPercent = 100 / slidesPerView;
+        const baseLeftPercent = -(currentIndex * slideWidthPercent);
+        const dragPercent = (diffX / slider.offsetWidth) * 100;
+        
+        track.style.transform = `translateX(${baseLeftPercent + dragPercent}%)`;
+    }
+
+    function handleTouchEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = currentX - startX;
+        
+        const threshold = 50; // Минимальная длина свайпа для перелистывания в пикселях
+
+        if (diffX < -threshold) {
+            currentIndex++; // Свайп влево -> следующий
+            updatePosition(true);
+        } else if (diffX > threshold) {
+            currentIndex--; // Свайп вправо -> предыдущий
+            updatePosition(true);
+        } else {
+            updatePosition(true); // Слабый свайп -> возврат на место
+        }
+        
+        startX = 0;
+        currentX = 0;
+    }
+
+    // Тач-события для смартфонов
+    track.addEventListener('touchstart', handleTouchStart, { passive: true });
+    track.addEventListener('touchmove', handleTouchMove, { passive: true });
+    track.addEventListener('touchend', handleTouchEnd);
+
+    // События мыши для десктопа (удобно для тестов)
+    track.addEventListener('mousedown', handleTouchStart);
+    window.addEventListener('mousemove', handleTouchMove);
+    window.addEventListener('mouseup', handleTouchEnd);
+
+    // 6. Динамический подсчет количества видимых слайдов при изменении экрана
+    function getSlidesPerView() {
+        const width = window.innerWidth;
+        if (width >= 1024) return 4;
+        if (width >= 768) return 3;
+        if (width >= 576) return 2;
+        return 1;
+    }
+
+    window.addEventListener('resize', () => {
+        const newSlidesPerView = getSlidesPerView();
+        if (newSlidesPerView !== slidesPerView) {
+            slidesPerView = newSlidesPerView;
+            updatePosition(false); // Мгновенно подгоняем размеры без анимации скачка
+        }
+    });
+  });
+
+</script>
 @endpush

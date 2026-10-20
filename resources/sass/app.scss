@@ -4,6 +4,7 @@
 @use "home/home.scss";
 @use "catalog/catalog.scss";
 @use "about/about.scss";
+@use "slider/slider.scss";
 @use "components/header/header.scss";
 @use "components/footer/footer.scss";
 @use "components/admin/header-admin/header-admin.scss";
@@ -11,11 +12,13 @@
 @use "components/admin/sidebar/sidebar.scss";
 @use "components/admin/search/search.scss";
 @use "components/admin/add-item/add-item.scss";
+@use "components/admin/noti-cleaner/noti-cleaner.scss";
 @use "admin/forms/forms.scss";
 @use "admin/pages/pages.scss";
 @use "admin/start/start.scss";
 @use "pagination/pagination.scss";
 @use "item-card/item-card.scss";
+@use "auth/auth.scss";
 
 @font-face {
   font-family: 'Roboto';

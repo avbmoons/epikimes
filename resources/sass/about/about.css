@@ -344,6 +344,8 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
   justify-content: flex-start;
 }
 .top-block .top-right-box .about-title {
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 10px;
   font-size: 24px;
   font-weight: 400;
@@ -351,9 +353,10 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
   letter-spacing: 0;
   color: #5A0402;
   text-align: left;
-  white-space: pre-line;
 }
 .top-block .top-right-box .about-text {
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 10px;
   font-size: 16px;
   font-weight: 300;
@@ -362,6 +365,9 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
   color: #453B3A;
   text-align: left;
   white-space: pre-line;
+}
+.top-block .top-right-box .about-text::first-line {
+  line-height: 0;
 }
 
 .bottom-block {
@@ -384,6 +390,7 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
   justify-content: flex-start;
 }
 .bottom-block .bottom-left-box .about-title {
+  margin-top: 0;
   padding: 10px;
   font-size: 24px;
   font-weight: 400;
@@ -391,9 +398,10 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
   letter-spacing: 0;
   color: #5A0402;
   text-align: left;
-  white-space: pre-line;
 }
 .bottom-block .bottom-left-box .about-text {
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 10px;
   font-size: 16px;
   font-weight: 300;

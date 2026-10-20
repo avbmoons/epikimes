@@ -34,6 +34,7 @@ $form-btn-height: 1.5* $input-height;
 $item-card-image-height: 70vh;
 
 $title-margin-top: 0; // 20px;
+$greeting-block-height: 20vh;
 
 $color-back-1: #f7f3ef; //rgb(247, 243, 239)
 $color-back-2: #d2d0cf; //rgb(210, 208, 207)
@@ -95,4 +96,25 @@ $color-white: #ffffff;  //rgb(255, 255, 255)
   @media only screen and (max-width: 768px) {
     @content;
   }
+}
+
+@mixin media-tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-text($font-phone, $font-smart, $font-tablet) {
+  @include  media-phone {
+    font-size: $font-phone;
+    line-height: $font-phone;
+  };
+  @include  media-smart {
+    font-size: $font-smart;
+    line-height: $font-smart;
+  };
+  @include  media-tablet {
+    font-size: $font-tablet;
+    line-height: $font-tablet;
+  };
 }

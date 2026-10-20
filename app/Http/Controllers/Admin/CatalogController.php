@@ -49,6 +49,8 @@ class CatalogController extends Controller
     public function store(CreateRequest $request): RedirectResponse
     {
         $data = $request->safe()->except(['image']);
+
+        $data['is_new'] = $request->has('is_new') ? 1 : 0;
         
         if (!isset($data['year'])) {
             $data['year'] = date('Y');
@@ -107,6 +109,8 @@ class CatalogController extends Controller
     
         $item = $catalog;
         $data = $request->safe()->except(['image']);
+
+        $data['is_new'] = $request->has('is_new') ? 1 : 0;
 
         if ($request->hasFile('image')) {
             if ($item->file_path && Storage::disk('public')->exists('catalog/' . $item->file_path)) {

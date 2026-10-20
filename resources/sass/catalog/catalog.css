@@ -551,7 +551,7 @@ body {
 .wrapper .top main .greeting-block {
   margin: 0 auto;
   width: 89%;
-  height: 25vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;

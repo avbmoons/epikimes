@@ -1,0 +1,245 @@
+@use "sass:math";
+
+@use "../vars/vars.scss" as *;
+// @use "../components/header/header.scss" as *;
+// @use "../components/footer/footer.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title-block-auth {
+    margin: auto; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 10vh; // 7vh;  
+    @include flex-vertical();
+    //border: 1px solid green;
+    @include media-mobile() {
+      margin-top: 20px;
+      height: 100%; 
+    }
+    .title-box-auth {
+      margin: 0 auto;
+      width: auto;
+      height: fit-content;
+      @include flex-horizontal();
+      //border: 1px solid green;
+      .title-auth {
+        padding: 20px;    
+        @include text-font(1.94vw, 400, 1.94vw, 0); // 28px
+        @include media-text(18px, 20px, 26px);
+        color: $color-grey-dark;  // $color-dark;
+        @include media-mobile() {
+          padding: 0;
+        }
+      }
+      .terve-auth {
+        padding: 10px;
+        width: auto;  
+        @include text-font(1.39vw, 300, 1.39vw, 0);
+        @include media-text(14px, 16px, 18px);
+        text-align: center;
+      }
+    }
+    .text-auth {
+      padding: 20px;
+      @include flex-vertical();
+      //border: 1px solid green;
+    }
+  }
+  .single-title-block {
+    margin: 0 auto;
+    height: auto;
+    @include media-mobile() {
+      height: 35vh;
+    }
+  }
+  .form-input-auth {
+    margin: 0 auto 20px;  
+    width: 60%;
+    height: 100vh - $header-height -$footer-height - 13vh; // - $footer-height - 7vh;  
+    //border: 2px solid grey;
+    border-radius: 5px;
+    box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.2),
+                10px 10px 5px 0px rgba(0,0,0,0.2);
+    border-left: 3px solid $color-brown; // orangered;
+    border-bottom: 5px solid $color-brown; // orangered;
+    border-top: 1px solid $color-back-2;  // $color-grey;
+    @include flex-vertical();
+    justify-content: space-around;  
+    background-color: $color-white; // $color-light;
+    overflow-y: auto;
+    @include media-mobile() {
+      width: 90%;
+      min-height: 100vh - 7vh - 4vh - 7vh;  //
+    }
+    .input-box-auth {
+      margin: 0 auto;
+      width: 80%;
+      height: auto;
+      @include flex-vertical();
+      justify-content: space-between;
+      //border: 1px solid green;
+      .input-lable-auth {
+        margin: 0 auto;
+        width: 100%;
+        @include text-font(1.39vw, 400, 1.39vw, 0);   // 20px
+        @include media-text(14px, 16px, 18px);
+        color: $color-grey-dark;  // $color-dark;
+      }
+      .input-text-auth {
+        margin: 0 auto;
+        margin-top: 10px; 
+        padding: 10px;
+        width: 100%;  
+        height: fit-content;  
+        @include text-font(1.11vw, 300, 1.11vw, 0); // 16px
+        @include media-text(10px, 12px, 14px);
+        color: $color-grey-dark;  // $color-dark;
+        border: 1px solid $color-back-2;  // $color-grey;
+        border-radius: 5px;
+        outline: none;
+        //white-space: pre-wrap;
+        @include media-mobile() {
+          margin-top: 5px;
+          padding: 5px;
+        }
+      }
+      .input-text-auth:focus {
+        border: 2px solid $color-orange;  // $color-blick;
+      }
+      .readonly {
+        background-color: $color-back-1;  // $color-lang-light;
+      }
+      .check-box {
+        margin-left: 0;
+        margin-top: 20px;
+        width: fit-content;
+        @include media-mobile() {
+          margin-top: 10px;
+        }
+      }
+      .link-page-auth {
+        margin: 0 auto;
+        width: 100%;
+        @include text-font(1.39vw, 400, 1.39vw, 0);
+        @include media-text(14px, 16px, 18px);
+        text-decoration: none;
+        text-align: left;
+        color: $color-back-4; // $color-grey-link;
+      }
+      .link-page-auth:hover {
+        text-decoration: underline;
+        color: $color-orange; // orangered;
+      }
+      .btn-form-auth {
+        margin: 0 auto;
+        margin-left: 0;
+        //padding: 30px 60px; 
+        padding: 30px 40px;
+        width: auto;  
+        //@include flex-horizontal();
+        @include flex-vertical();
+        @include text-font(1.53vw, 400, 1.53vw, 0); //22px;
+        text-align: center;
+        @include media-text(18px, 20px, 22px);
+        color: $color-grey-dark;  // $color-dark;
+        background-color: $color-back-2;  // $color-grey;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        @include media-mobile() {
+          margin-bottom: 10px;
+          padding: 20px 60px;
+        }
+      }
+      .btn-form-auth:hover {
+        background-color: $color-back-3;  // $color-blick;
+        color: $color-grey-dark;  // $color-dark;
+      }
+      .link-btn {
+        width: 100%;
+        background: none;
+        text-align: center;
+        color: $color-back-4; // $color-grey-link;
+        text-decoration: underline;
+      }
+      .link-btn:hover {
+        color: $color-orange; // orangered;
+        text-decoration: underline;
+        background: none;
+      }
+      .exit-btn {
+        margin: 0 auto;
+        width: 60%;
+        text-align: center;
+        @include media-mobile {
+          background-color: $color-orange;  // $color-blick;
+        }
+      }
+    }
+    .first {
+      margin-top: 0;  
+    }  
+    .first-row {
+      margin-top: 40px;
+      
+    }
+    .area {
+      min-height: 20vh;
+      padding-top: 10px;
+      line-height: normal;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    } 
+    .mail-buttons {
+      flex-direction: row;
+      //border: 1px solid green;
+      .btn-form-auth {
+        margin-right: 0;
+        width: 40%;
+      }
+    } 
+    .single-btn {
+      margin: 0 auto;
+      margin-bottom: 0; 
+      width: 80%;
+      min-height: 15vh;
+      height: 15vh; 
+      border-top: none;
+      border-bottom: none;
+      border-left: none;
+      box-shadow: none;
+      outline: none;
+      @include flex-vertical();
+      background-color: $color-white; // $color-light;
+      //border: 1px solid blue;
+      @include media-mobile() {
+        width: 90%;
+        height: 15vh;  
+      }
+    } 
+  }
+  .single-btn-block {
+    margin: 0 auto 0;
+    width: 80%;
+    height: fit-content;  
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    box-shadow: none;
+    outline: none;
+    @include flex-vertical();
+    justify-content: space-around;  
+    background-color: $color-white; // $color-light;
+    //border:  1px solid green;
+    @include media-mobile() {
+      width: 90%;
+      min-height: 30vh;
+      height: 30vh; 
+    }
+  } 

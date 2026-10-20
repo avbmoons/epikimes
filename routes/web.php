@@ -9,11 +9,14 @@ use App\Http\Controllers\Admin\UsersController as AdminUsersController;
 use App\Http\Controllers\Admin\MailsController as AdminMailsController;
 use App\Http\Controllers\Admin\NotificationsController as AdminNotificationsController;
 use App\Http\Controllers\Admin\ColorsController as AdminColorsController;
+use App\Http\Controllers\Admin\ImagesCleanerController as AdminImagesCleanerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\AboutController;
-
+use App\Http\Controllers\MailController;
+use App\Notifications\WelcomeNotification;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +45,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function() {
     Route::resource('about', AdminAboutController::class);
     Route::resource('users', AdminUsersController::class);
     Route::resource('mails', AdminMailsController::class);
+    Route::post('notifications/bulk-destroy', [AdminNotificationsController::class, 'bulkDestroy'])
+            ->name('notifications.bulk-destroy');
     Route::resource('notifications', AdminNotificationsController::class);
+            // ->only(['index', 'destroy']);
     Route::resource('colors', AdminColorsController::class);
+    Route::resource('images-cleaner', AdminImagesCleanerController::class);
 });
 
 Route::group(['prefix' => ''], static function() {
@@ -52,4 +59,29 @@ Route::group(['prefix' => ''], static function() {
         Route::get('/catalog/one/{id}', [CatalogController::class, 'show'])
             ->where(name: 'id', expression: '\d+')->name("itemId");
     Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::resource('/mail', MailController::class)->names([
+        'create' => 'mail.create',
+        'store' => 'mail.store',
+    ]);
+});
+
+Route::get('/test-welcome', function () {
+    try {
+       $user = User::first() ?? User::factory()->make([
+        'name' => 'Ivan Ivanov', 
+        'email' => 'ivanov@example.com']);
+        
+       $user->notify(new WelcomeNotification()); 
+
+       return 'Welcome mail was sending to Mailpit!';
+    }  catch (\Exception $e) {
+        return response()->json([
+            'error' => 'Error mail sending',
+            'message' => $e->getMessage()
+        ]);
+    }
+
+    
+
+    
 });

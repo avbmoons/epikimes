@@ -36,20 +36,29 @@
           justify-content: flex-start;
           //border: 1px solid orangered;
           .about-title {
+            margin-top: 0;
+            margin-bottom: 0;
             padding: 10px;  // 0 10px 0 10px;
             @include text-font(24px, 400, auto, 0);
             color: $color-brown;
             text-align: left;
-            white-space: pre-line;
+            //white-space: pre-line;
           }
           .about-text {
+            margin-top: 0;
+            margin-bottom: 0;
             padding: 10px;
             @include text-font(16px, 300, auto, 0);
             color: $color-grey-dark;
             text-align: left;
             white-space: pre-line;
           }
+          .about-text::first-line {
+            line-height: 0;
+          }          
         }
+
+
       }
       .bottom-block {
         margin: 0 auto;
@@ -66,13 +75,16 @@
           justify-content: flex-start;
           //border: 1px solid orangered;
           .about-title {
+            margin-top: 0;
             padding: 10px;
             @include text-font(24px, 400, auto, 0);
             color: $color-brown;
             text-align: left;
-            white-space: pre-line;
+            //white-space: pre-line;
           }
           .about-text {
+            margin-top: 0;
+            margin-bottom: 0;
             padding: 10px;
             @include text-font(16px, 300, auto, 0);
             color: $color-grey-dark;

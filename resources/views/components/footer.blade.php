@@ -14,12 +14,10 @@
         </div>
         <div class="title-block">
           <p class="copyrights" id="copyrights">&copy; 
-                {{-- Pavel Alfimov.  --}}
             @if (isset($footerElements['copyrights_owner']) &&  $footerElements['copyrights_owner']->is_visible)
             {{ $footerElements['copyrights_owner']->title }}
             @endif
             All rights reserved. 
-            {{-- 2026 --}}
             @if (isset($footerElements['copyrights_years']) &&  $footerElements['copyrights_years']->is_visible)
             {{ $footerElements['copyrights_years']->title }}
             @endif

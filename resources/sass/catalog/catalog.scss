@@ -49,7 +49,7 @@
       .greeting-block {
         margin: 0 auto;
         width: $block-width;
-        height: 25vh;
+        height: $greeting-block-height; // 25vh;
         //border: 1px solid blue;
         @include flex-horizontal();
         justify-content: space-between;

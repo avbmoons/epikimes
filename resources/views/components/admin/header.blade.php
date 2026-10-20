@@ -1,13 +1,10 @@
 <header-admin>
   <div class="header-block-admin" id="headerBlockAdmin">
     <div class="header-left-admin">
-      <a href="index.html" class="site-title-admin">
-        {{-- My Hobby Arts --}}
-        @if (isset($headerElements['title_site']) && $headerElements['title_site']->is_visible)
-            {{ $headerElements['title_site']->title }}
-        @endif
-        . Admin
-      </a>
+      @if (isset($headerElements['title_site']) && $headerElements['title_site']->is_visible)
+        <a href="index.html" class="site-title-admin">{{ $headerElements['title_site']->title }}. Admin
+        </a>
+      @endif
     </div>
     <div class="header-center-admin">
       <div class="menu-block">
@@ -19,7 +16,10 @@
     <div class="header-right">
       <div class="service-block">
         <div class="service-item-admin">
-          <a href="#" class="sign-out-link">Sign out</a>
+          <form action="{{ route('logout') }}" method="POST" id="logout-form">
+            @csrf
+            <a href="#" class="sign-out-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>
+          </form>          
         </div>
       </div>
     </div>

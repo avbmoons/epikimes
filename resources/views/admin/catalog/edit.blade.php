@@ -24,7 +24,7 @@
         <div class="input-group admin" >
           <div class="input-box file-button" name="file-box" style="margin-bottom: 0; height: calc(3*$input-height); justify-content: center;">
             <label for="image" class="input-lable file-label" style="width: 45%;">Select file</label>
-            <input type="file" class="input-text file-input" name="image" id="image" accept="image/*" required onchange="previewImage(event)" style="height: 60px;">@error('image')<span class="error">{{ $message }}</span> @enderror
+            <input type="file" class="input-text file-input" name="image" id="image" accept="image/*" onchange="previewImage(event)" style="height: 60px;">@error('image')<span class="error">{{ $message }}</span> @enderror
             <span class="file-name" id="file-name">{{ old('image', $item->file_path) }}</span>
           </div>
           <div class="input-box" name="preview-box" style="margin-bottom: 0; height: calc(3*$input-height); justify-content: center;">
@@ -96,14 +96,14 @@
           </div>
           <div class="input-box mini" name="is-new-box" style="margin-right: 0;">
             <label for="is_new" class="input-lable" style="text-align: center;">Is New</label>            
-            <input type="checkbox" class="input-text" name="is_new" id="is_new" value="{{ old('is_new', $item->is_new) }}" @error('is_new') is-invalid @enderror>              
+            <input type="checkbox" class="input-text" name="is_new" id="is_new" value="1" @checked (old('is_new', $item->is_new))  @error('is_new') is-invalid @enderror>              
           </div>
         </div>
       </div>
       <div class="input-box admin" name="btns-box">
         <div class="input-group">
           <button type="submit" class="btn-form">Save & close</button>          
-          <button type="reset" class="btn-form cancel">Clear</button> 
+          {{-- <button type="reset" class="btn-form cancel">Clear</button>  --}}
           <a class="btn-form cancel" href="{{ route('admin.catalog.index') }}">Cancel</a>       
         </div>
       </div> 

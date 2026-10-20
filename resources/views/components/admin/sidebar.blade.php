@@ -8,20 +8,12 @@
       </svg>
       <a href="{{ route('admin.index') }}" class="btn-menu-item @if(request()->routeIs('admin.index')) active @endif" >Start</a>
     </div>
-    <div class="sidebar-menu-box" id="menuPageElements">
+    <div class="sidebar-menu-box" id="menuCategories">
       <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 8.22222L11 2L19 8.22222V18C19 18.4715 18.8127 18.9237 18.4793 19.2571C18.1459 19.5905 17.6937 19.7778 17.2222 19.7778H4.77778C4.30628 19.7778 3.8541 19.5905 3.5207 19.2571C3.1873 18.9237 3 18.4715 3 18V8.22222Z" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8.33331 19.7778V10.8889H13.6666V19.7778" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 4V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8H17" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 4H17V18C17 18.5304 17.2107 19.0391 17.5858 19.4142C17.9609 19.7893 18.4696 20 19 20M13 8H7M13 12H9" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <a href="{{ route('admin.elements.index') }}" class="btn-menu-item @if(request()->routeIs('admin.elements.index')) active @endif">Page elements</a>
-    </div>
-    <div class="sidebar-menu-box" id="menuAbout">
-      <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 2H20C21.103 2 22 2.897 22 4V16C22 17.103 21.103 18 20 18H17V21.767L10.723 18H4C2.897 18 2 17.103 2 16V4C2 2.897 2.897 2 4 2ZM4 16H11.277L15 18.233V16H20V4H4V16Z" fill="#295173"/>
-        <line x1="6.75" y1="8.25" x2="14.25" y2="8.25" stroke="#295173" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="9.75" y1="11.25" x2="14.25" y2="11.25" stroke="#295173" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <a href="{{ route('admin.about.index') }}" class="btn-menu-item @if(request()->routeIs('admin.about.index')) active @endif">About</a>
+      <a href="{{ route('admin.categories.index') }}" class="btn-menu-item @if(request()->routeIs('admin.categories.index')) active @endif">Categories</a>
     </div>
     <div class="sidebar-menu-box" id="menuColors">
       <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,20 +22,28 @@
         <circle cx="11.5" cy="6.5" r="1.5" fill="#295173"/>
       </svg>
       <a href="{{ route('admin.colors.index') }}" class="btn-menu-item @if(request()->routeIs('admin.colors.index')) active @endif">Colors</a>
-    </div>
-    <div class="sidebar-menu-box" id="menuCategories">
-      <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 4V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8H17" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M3 4H17V18C17 18.5304 17.2107 19.0391 17.5858 19.4142C17.9609 19.7893 18.4696 20 19 20M13 8H7M13 12H9" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <a href="{{ route('admin.categories.index') }}" class="btn-menu-item @if(request()->routeIs('admin.categories.index')) active @endif">Categories</a>
-    </div>
+    </div> 
     <div class="sidebar-menu-box" id="menuCatalog">
       <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V5C22 3.9 21.1 3 20 3ZM4 19V5H20V19H4Z" fill="#1B1357"/>
         <path d="M13 8.00004H18V10H13V8.00004ZM8.00004 8.59004L6.96004 7.54004L5.54004 8.96004L8.00004 11.41L11.46 7.96004L10.04 6.54004L8.00004 8.59004ZM13 14H18V16H13V14ZM8.00004 14.59L6.96004 13.54L5.54004 14.96L8.00004 17.41L11.46 13.96L10.04 12.54L8.00004 14.59Z" fill="#295173"/>
       </svg>
       <a href="{{ route('admin.catalog.index') }}" class="btn-menu-item @if(request()->routeIs('admin.catalog.index')) active @endif">Catalog</a>
+    </div>           
+    <div class="sidebar-menu-box" id="menuPageElements">
+      <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8.22222L11 2L19 8.22222V18C19 18.4715 18.8127 18.9237 18.4793 19.2571C18.1459 19.5905 17.6937 19.7778 17.2222 19.7778H4.77778C4.30628 19.7778 3.8541 19.5905 3.5207 19.2571C3.1873 18.9237 3 18.4715 3 18V8.22222Z" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.33331 19.7778V10.8889H13.6666V19.7778" stroke="#295173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <a href="{{ route('admin.elements.index') }}" class="btn-menu-item @if(request()->routeIs('admin.elements.index')) active @endif">Page elements</a>
+    </div>
+    <div class="sidebar-menu-box" id="menuImagesCleaner">
+      <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 2H20C21.103 2 22 2.897 22 4V16C22 17.103 21.103 18 20 18H17V21.767L10.723 18H4C2.897 18 2 17.103 2 16V4C2 2.897 2.897 2 4 2ZM4 16H11.277L15 18.233V16H20V4H4V16Z" fill="#295173"/>
+        <line x1="6.75" y1="8.25" x2="14.25" y2="8.25" stroke="#295173" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="9.75" y1="11.25" x2="14.25" y2="11.25" stroke="#295173" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <a href="{{ route('admin.images-cleaner.index') }}" class="btn-menu-item @if(request()->routeIs('admin.images-cleaner.index')) active @endif">Images cleaner</a>
     </div>
     <div class="sidebar-menu-box" id="menuUsers">
       <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

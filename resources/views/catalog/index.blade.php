@@ -9,15 +9,11 @@
             </svg>
           </a>
         </div>
-
         <div class="greeting-block" id="greetingBlock" style="height: fit-content; margin-bottom: 60px;">
           <div class="title-link-block">
-            <a href="{{ route('catalog') }}" class="title-link" id="titleCatalog" style="color: {{ $elements['title_catalog']->color }}">
-              {{-- Arts catalog --}}
-              @if (isset($elements['title_catalog']) && $elements['title_catalog']->is_visible)
-              {{ $elements['title_catalog']->title }}                
-              @endif
-            </a>
+            @if (isset($elements['title_catalog']) && $elements['title_catalog']->is_visible)
+              <a href="{{ route('catalog') }}" class="title-link" id="titleCatalog" style="color: {{ $elements['title_catalog']->color }}">{{ $elements['title_catalog']->title }}</a>
+            @endif
           </div>
           <div class="search-admin-block">
             <x-admin.search route-first="catalog" route-second="catalog"></x-admin.search>

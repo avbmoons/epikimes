@@ -1,0 +1,85 @@
+@use 'sass:math';
+
+@use "../../../vars/vars.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+@mixin noticleanerblock($font-family) {
+  .filters-form {
+    margin: 0 auto;
+    width: 100%; // 60%; 
+    height: 100%;
+    @include flex-vertical();
+  
+  .services-filter-box {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    @include flex-horizontal();
+    //justify-content: flex-start;    
+  
+  .filter-box {
+    margin: 0 auto;
+    width: 30%;
+    height: 100%;
+    @include flex-vertical();
+    justify-content: flex-start;  // space-between;
+    .input-filter {
+      padding-left: 10px;
+      width: 100%;  //90%;
+      height: 50%;
+      @include text-font(14px, 300, auto, 0);
+      color: $color-grey-dark;
+      border-radius: 5px;
+    }
+    .label-filter {
+      padding-bottom: 10px;
+      @include text-font(18px, 400, auto, 0);
+      color: $color-back-4;
+    }
+    .date-filter {
+      outline: none;
+      //-webkit-box-shadow: none;
+      //-webkit-appearance: none;
+      appearance: none;
+      //box-shadow: none;
+    }
+  }
+  .button-clean-box {
+    width: 20%;
+    //height: 50%;
+    @include flex-vertical();
+    justify-content: flex-end;
+    .btn-clean {
+      width: 100%;
+      height: 50%;
+      //padding: 10px;
+      @include text-font(18px, 400, auto, 0);
+      color: $color-grey-dark;
+      border: none;
+      border-radius: 5px;
+      background-color: $color-back-2;
+    }
+    .btn-filter:hover {
+      background-color: $color-back-3;
+    }
+  }
+  .input-date {
+    width: 18%; //20%;
+    -webkit-box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+  }
+  }
+  }
+}
+
+@include noticleanerblock('Roboto');

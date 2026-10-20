@@ -33,6 +33,7 @@
       //border: 1px solid green;
       position: relative;
       .btn-up-block {
+        margin: 0 auto;
         width: fit-content;
         position: sticky;
         top: 90vh;  // -80%; // 73vh; //  -50%;
@@ -48,11 +49,11 @@
       .greeting-block {
         margin: 0 auto;
         width: $block-width;
-        height: 25vh;
+        height: $greeting-block-height; // 25vh;
         //border: 1px solid blue;
         @include flex-horizontal();
         .title-link-block {
-          margin: auto;
+          margin: 0 auto;
           margin-top: $title-margin-top;  // 40px;
           width: $header-left-width;
           .title-link {
@@ -65,18 +66,20 @@
           }
         }
         .greeting-text-block {
-          margin: auto;
+          margin: 0 auto;
           margin-top: $title-margin-top;  // 40px;
           width: $header-center-width;
           .greeting-text {
+            margin-top: 0;
+            margin-bottom: 0;
             white-space: pre-line;
             text-align: center;
-            @include text-font(20px, 400, 24px, 0);
+            @include text-font(20px, 400, auto, 0);
             color: $color-grey-dark;
           }
         }
         .resource-link-block {
-          margin: auto;
+          margin: 0 auto;
           margin-top: $title-margin-top;  // 40px;
           width: $header-right-width;
           //border: 1px solid green;
@@ -99,13 +102,15 @@
         position: relative;
         .collage-img {
           margin: 0 auto;
+          margin-top: 0;
+          margin-bottom: 0;
           //width: 83%;
           height: 100%; // auto; // 100%;
           transition: filter 0.3s ease;
           @include flex-vertical();          
         }
         .collage-link {
-          margin: auto;
+          margin: 0 auto;
           width: 83%;
           text-decoration: none;
           text-align: center;
@@ -141,6 +146,8 @@
           margin-top: 40px;
           width: 100%;  // $header-left-width;
           .title-link {
+            margin-top: 0;
+            margin-bottom: 0;
             @include text-font(30px, 400, auto, 0);
             color: $color-brown;
             text-decoration: none;
