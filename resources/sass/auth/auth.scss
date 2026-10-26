@@ -60,7 +60,7 @@
   .form-input-auth {
     margin: 0 auto 20px;  
     width: 60%;
-    height: 100vh - $header-height -$footer-height - 13vh; // - $footer-height - 7vh;  
+    height: 100vh - ($header-height) - ($footer-height) - 13vh; // - $footer-height - 7vh;  
     //border: 2px solid grey;
     border-radius: 5px;
     box-shadow: -10px 10px 5px 0px rgba(0,0,0,0.2),

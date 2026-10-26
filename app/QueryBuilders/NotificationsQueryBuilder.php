@@ -22,7 +22,7 @@ final class NotificationsQueryBuilder extends QueryBuilder
     return $this->model->get();
   }
 
-  public function getNotificationsWithPagination(int $quantity = 8): LengthAwarePaginator
+  public function getNotificationsWithPagination(int $quantity = 10): LengthAwarePaginator
   {
     $search = request()->query('search');
     return DatabaseNotification::query()

@@ -3,7 +3,7 @@
 @section('title', 'Notification.Create')
 
 @section('content')
-  <section class="forms-head-block admin">
+    <section class="forms-head-block admin">
       <div class="title-block">
         <div class="title-box">
           <p class="title">Notification create</p>

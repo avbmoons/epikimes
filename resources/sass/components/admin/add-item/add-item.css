@@ -35,6 +35,9 @@ body {
 .add-block .add-box .btn-add .img-add:hover path {
   fill: #EF9C33;
 }
+.add-block .add-box .btn-add .img-delete:hover path {
+  stroke: #EF9C33;
+}
 .add-block .add-box .lable-add {
   margin-right: 30px;
   padding-left: 1vw;

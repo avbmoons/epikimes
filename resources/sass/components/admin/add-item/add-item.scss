@@ -34,6 +34,9 @@ body {
               .img-add:hover path {
                 fill: $color-orange;
               }
+              .img-delete:hover path {
+                stroke: $color-orange;
+              }
             }
             .lable-add {
               margin-right: 30px; // 5vw;

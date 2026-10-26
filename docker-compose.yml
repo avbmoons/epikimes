@@ -16,7 +16,7 @@ services:
         image: 'mysql:8.0'
         working_dir: /app
         volumes:
-            - '.:/app'
+            - db_data:/var/lib/mysql    # привязка тома к данным mysql  #'.:/app'
         environment:
             - MYSQL_ROOT_PASSWORD=avb
             - MYSQL_DATABASE=epikimes
@@ -41,3 +41,6 @@ services:
             - '.:/app'
             - './phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini'
             - './phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/8.2/cli/conf.d/99-overrides.ini'
+
+volumes:
+    db_data:    #   Объявление тома

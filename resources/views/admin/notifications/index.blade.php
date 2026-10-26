@@ -84,14 +84,17 @@
     </div>
 
   </section>  
+
   <section class="head-block" style="border-top: 1px solid #d2d0cf; margin-top: 40px; margin-bottom:40px;">
     <div class="title-block" style="padding-top: 10px;">
       <div class="title-box" >
-        <p class="title">Notification clear</p>
+        {{-- <p class="title">Notification clear</p> --}}
+        <a href="{{ route('admin.notifications.cleaner') }}" class="title link" style="margin-top: 60px;">Notifications cleaner</a>
       </div>
     </div>
     <div class="services-block" style="padding-top: 10px;">
-      <form action="{{ route('admin.notifications.bulk-destroy') }}" method="POST" onsubmit="return confirm('Are you sure');" class="filters-form">
+      
+      {{-- <form action="{{ route('admin.notifications.bulk-destroy') }}" method="POST" onsubmit="return confirm('Are you sure');" class="filters-form">
         @csrf    
       
         <div class="services-filter-box" style="justify-content: space-between">
@@ -119,9 +122,22 @@
           </div>
         </div>
       
-      </form>
+      </form> --}}
     </div>
   </section>
+
+  
+
+  {{-- <div class="form-input admin">
+
+  <div class="input-box">
+    <div class="input-group">
+     <a href="{{ route('admin.notifications.cleaner') }}" class="btn-form">Go to notifications cleaner</a> 
+    </div>
+  </div>
+  
+  </div> --}}
+  
 @endsection
 
 @push('js')

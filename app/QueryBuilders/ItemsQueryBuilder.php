@@ -89,6 +89,11 @@ final class ItemsQueryBuilder extends QueryBuilder
         ->get();
   }
 
+  public function getItemsWithImages(): Collection
+  {
+    return $this->model->whereNotNull('file_path')->get();
+  }
+
   public function getItemById(int $id): Collection
   {
     return Item::query()->where('id', $id)->get();

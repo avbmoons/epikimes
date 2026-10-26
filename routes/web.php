@@ -37,6 +37,8 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+//Route::delete('.admin.images-cleaner/clear', [AdminImagesCleanerController::class, 'clear'])->name('clear');
+
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function() {
     Route::resource('/', AdminStartController::class)->names(['index' => 'index',]);
     Route::resource('elements', AdminPageElementsController::class);
@@ -45,11 +47,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function() {
     Route::resource('about', AdminAboutController::class);
     Route::resource('users', AdminUsersController::class);
     Route::resource('mails', AdminMailsController::class);
+    Route::get('notifications/cleaner', [AdminNotificationsController::class, 'cleaner'])
+            ->name('notifications.cleaner');
     Route::post('notifications/bulk-destroy', [AdminNotificationsController::class, 'bulkDestroy'])
             ->name('notifications.bulk-destroy');
     Route::resource('notifications', AdminNotificationsController::class);
             // ->only(['index', 'destroy']);
     Route::resource('colors', AdminColorsController::class);
+    Route::delete('images-cleaner/clear', [AdminImagesCleanerController::class, 'clear'])->name('images-cleaner.clear');
     Route::resource('images-cleaner', AdminImagesCleanerController::class);
 });
 
