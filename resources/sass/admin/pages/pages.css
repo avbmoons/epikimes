@@ -862,6 +862,9 @@ body {
   text-align: center;
   text-decoration: none;
 }
+.head-block .title-block .title-box .link:hover {
+  background-color: #b5b0a1;
+}
 .head-block .services-block {
   margin: 0 auto;
   width: 70%;

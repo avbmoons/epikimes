@@ -1,0 +1,102 @@
+@use "sass:math";
+
+@use "../vars/vars.scss" as *;
+// @use "../components/header/header.scss" as *;
+// @use "../components/footer/footer.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin chartjs {
+    .chart-rows-block {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 100%;
+        height: 78%;   
+        @include flex-vertical();
+        justify-content: space-between; 
+        @include media-mobile {
+            min-height: 80%;
+            justify-content: flex-start;
+        }
+        overflow-y: auto;
+        .chart-title-block {
+            margin: 0 auto;
+            padding-top: 1%;
+            width: 100%;
+            height: 10%;
+            @include media-mobile {
+                height: 5%;
+            }
+            .charts-title {
+                padding: 20px 0px;
+                @include text-font(1.67vw, 400, 1.67vw, 0);     //24px
+                @include media-text(14px, 16px, 20px);
+                @include media-phone() {
+                    padding: 10px 0;
+                }
+                color: $color-grey-dark;
+            }
+        }
+        .chart-mini-row {
+            margin: 0 auto;
+            margin-bottom: 1%;  // 0.97vw;
+            width: 100%;
+            height: 38%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            @include media-mobile {
+                margin-top: 10px;
+                min-height: 38%;
+                flex-wrap: wrap;
+            }
+            .chart-mini {
+                margin: 0 auto;
+                width: 23%; 
+                height: 100%;
+                position: relative;
+                border:  1px solid blue;
+                border-radius: 5px;
+                @include media-phone {
+                    width: 46%;
+                    height: 48%;    
+                    margin-bottom: 10px;
+                }
+                #testChart2, #testChart3, #testChart4, #testChart1 {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            }
+        }
+        .chart-one-row {
+            margin: 0 auto;
+            margin-bottom: 1%;  // 0.97vw;
+            width: 98%; 
+            height: 52%;    
+            position: relative;
+            @include flex-horizontal();
+            justify-content: space-around;
+            border: 2px solid violet;
+            border-radius: 5px;
+            @include media-mobile {
+                height: 35vh;   
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            #testChart {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    }
+}
+
+@include chartjs();

@@ -62,6 +62,9 @@
           text-align: center;
           text-decoration: none;
         }
+        .link:hover {
+          background-color: $color-back-3;
+        }
       }
     }
     .services-block {

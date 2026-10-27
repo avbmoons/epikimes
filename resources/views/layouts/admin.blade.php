@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yield('title', 'Admin') | hobyArts</title>
+  <title>@yield('title', 'Admin') | hobbyArts</title>
   {{-- <link rel="stylesheet" href="../../styles/components/layouts/admin/admin.css"> --}}
   @section('styles')
       @vite(['resources/sass/app.scss', 'resources/js/app.js'])
