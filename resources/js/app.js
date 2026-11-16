@@ -3,3 +3,4 @@ import '../sass/app.scss';
 
 //import './charts';
 import './charts';
+import './editor';

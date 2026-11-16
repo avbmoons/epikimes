@@ -33,7 +33,7 @@
         <tr>
           <td>{{ $category->id }}</td>
           <td>{{ $category->title }}</td>
-          <td>{{ $category->description }}</td>
+          <td class="td-title">{!! $category->description !!}</td>
           <td>
             <div class="statuses">
               <p>{{ $category->status }}</p>

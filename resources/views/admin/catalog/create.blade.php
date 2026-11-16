@@ -33,11 +33,11 @@
       </div>      
       <div class="input-box admin" name="title-box">
         <label for="title" class="input-lable">Title</label>            
-        <input type="text" class="input-text" name="title" id="title" value="{{ old('title') }}" @error('title') is-invalid @enderror>              
+        <input type="text" class="input-text" name="title" id="title" value="{{ old('title') }}" placeholder="the title of your art here..." @error('title') is-invalid @enderror>              
       </div>
       <div class="input-box admin" name="description-box">
         <label for="description" class="input-lable">Description</label>
-        <textarea class="input-text area" name="description" id="description">{{ old('description') }}</textarea>            
+        <textarea class="input-text area editor" name="description" id="description" placeholder="the description of your art here...">{{ old('description') }}</textarea>            
       </div>
       <div class="input-group admin">
         <div class="input-box middle" name="category-box">
@@ -45,7 +45,7 @@
           <select class="input-text" name="category_id" id="category_id" @error('category_id') is-invalid @enderror>
             <option value="0">--Select category--</option>
             @foreach ($categories as $category)
-              <option @if ((int) old('category') === $category->id) selected @endif value="{{ $category->id }}">{{ $category->title }}</option>
+              <option @if ((int) old('category_id') === $category->id) selected @endif value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach
           </select>
           @error('category_id') @enderror
@@ -64,11 +64,27 @@
       <div class="input-group admin">
         <div class="input-box middle" name="size-box">
           <label for="size" class="input-lable">Size</label>            
-          <input type="text" class="input-text" name="size" id="size" value="{{ old('size') }}" @error('size') is-invalid @enderror>              
+          <input type="text" class="input-text" name="size" id="size" value="{{ old('size') }}" placeholder="20x20 cm (for example)" @error('size') is-invalid @enderror>              
         </div>
         <div class="input-box middle" name="year-box">
           <label for="itemYear" class="input-lable">Year</label>            
-          <input type="number" class="input-text" name="year" id="itemYear" value="{{ old('year') }}" @error('year') is-invalid @enderror>              
+          <input type="number" class="input-text" name="year" id="itemYear" value="{{ old('year') }}" placeholder="2026 (for example)" @error('year') is-invalid @enderror>              
+        </div> 
+      </div>
+      <div class="input-group admin">
+        <div class="input-box middle" name="cost-box">
+          <label for="cost" class="input-lable">Cost</label>            
+          <input type="number" class="input-text" name="cost" id="cost" step="0.01" min="0" value="{{ old('cost') }}" placeholder="0.00" @error('cost') is-invalid @enderror>              
+        </div>
+        <div class="input-box middle" name="currency-box">
+          <label for="currency" class="input-lable">Currency</label>
+          <select class="input-text" name="currency" id="currency">
+              @foreach ($currency as $curr => $symbol)
+                 {{-- <option @if(old('currency') === $curr) selected @endif>{{ $curr }}</option>  --}}
+                 <option value="{{ $curr }}" @selected(old('currency') === $curr)>{{ $symbol }}</option>
+              @endforeach              
+          </select>            
+          {{-- <input type="number" class="input-text" name="currency" id="itemCurrency" value="{{ old('year') }}" @error('year') is-invalid @enderror>               --}}
         </div> 
       </div>
       <div class="input-box admin" name="image-box">

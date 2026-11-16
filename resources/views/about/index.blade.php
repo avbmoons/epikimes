@@ -11,20 +11,24 @@
   </div>
   <div class="top-right-box">
     @if (isset($elements['title_top']) && $elements['title_top']->is_visible)
-      <p class="about-title" id="titleTop" style="color: {{ $elements['title_top']->color }}">{{ $elements['title_top']->title }}</p>
+      <div class="about-title" id="titleTop" style="color: {{ $elements['title_top']->color }}">{!! $elements['title_top']->title !!}</div>
+      {{-- <p class="about-title" id="titleTop" style="color: {{ $elements['title_top']->color }}">{!! $elements['title_top']->title !!}</p> --}}
     @endif
     @if (isset($elements['text_top']) && $elements['text_top']->is_visible)
-      <p class="about-text" id="textTop" style="color: {{ $elements['text_top']->color }}">{{ $elements['text_top']->title }}</p>
+      <div class="about-text" id="textTop" style="color: {{ $elements['text_top']->color }}">{!! $elements['text_top']->title !!}</div>
+      {{-- <p class="about-text" id="textTop" style="color: {{ $elements['text_top']->color }}">{!! $elements['text_top']->title !!}</p> --}}
     @endif
   </div>
 </div>
 <div class="bottom-block">
   <div class="bottom-left-box">
     @if (isset($elements['title_bottom']) && $elements['title_bottom']->is_visible)
-      <p class="about-title" id="titleBottom" style="color: {{ $elements['title_bottom']->color }}">{{ $elements['title_bottom']->title }}</p>
+      <div class="about-title" id="titleBottom" style="color: {{ $elements['title_bottom']->color }}">{!! $elements['title_bottom']->title !!}</div>
+      {{-- <p class="about-title" id="titleBottom" style="color: {{ $elements['title_bottom']->color }}">{!! $elements['title_bottom']->title !!}</p> --}}
     @endif
     @if (isset($elements['text_bottom']) && $elements['text_bottom']->is_visible)
-      <p class="about-text" id="textBottom" style="color: {{ $elements['text_bottom']->color }}">{{ $elements['text_bottom']->title }}</p>
+      <div class="about-text" id="textBottom" style="color: {{ $elements['text_bottom']->color }}">{!! $elements['text_bottom']->title !!}</div>
+      {{-- <p class="about-text" id="textBottom" style="color: {{ $elements['text_bottom']->color }}">{!! $elements['text_bottom']->title !!}</p> --}}
     @endif
   </div>
   <div class="bottom-right-box">

@@ -42,7 +42,7 @@
         .footer-left-block {
           height: 70%;
           @include flex-vertical();
-          justify-content: space-between;
+          justify-content: center;  // space-between;
           .title-block {
             margin: 0 auto;
             width: 100%;
@@ -123,9 +123,12 @@
           .socials-block {
             margin: 0 auto;
             width: 70%; // fit-content;
+            height: 100%;
             @include flex-horizontal();
             justify-content: flex-end;  // space-between;
             .social-icon {
+              margin: auto;
+              margin-right: 0;
               width: 36px;
               height: 36px;
             }

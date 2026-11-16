@@ -37,7 +37,7 @@
           <td class="td-title">@if ($element->image_path)
               {{ $element->image_path }}
           @else
-              {{ $element->title }}
+              {!! $element->title !!}
           @endif</td>
           <td>
             <span style="

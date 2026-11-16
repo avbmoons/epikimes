@@ -27,6 +27,8 @@
           <th>Category</th>
           <th>Palette</th>
           <th>Size</th>
+          <th>Cost</th>
+          <th>Curr</th>
           <th>Year</th>
           <th class="th-status">Status</th>
           <th class="th-fixed">Updated</th>
@@ -43,6 +45,8 @@
           <td>{{ $item->categories->title }}</td>
           <td>{{ $item->palette }}</td>
           <td>{{ $item->size }}</td>
+          <td>{{ $item->cost }}</td>
+          <td style="text-align: center; padding-left: 0;">{{ $item->currency->symbol() }}</td>
           <td>{{ $item->year }}</td>
           <td>
             <div class="statuses">

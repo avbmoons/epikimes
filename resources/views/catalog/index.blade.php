@@ -12,7 +12,7 @@
         <div class="greeting-block" id="greetingBlock" style="height: fit-content; margin-bottom: 60px;">
           <div class="title-link-block">
             @if (isset($elements['title_catalog']) && $elements['title_catalog']->is_visible)
-              <a href="{{ route('catalog') }}" class="title-link" id="titleCatalog" style="color: {{ $elements['title_catalog']->color }}">{{ $elements['title_catalog']->title }}</a>
+              <a href="{{ route('catalog') }}" class="title-link" id="titleCatalog" style="color: {{ $elements['title_catalog']->color }}">{!! $elements['title_catalog']->title !!}</a>
             @endif
           </div>
           <div class="search-admin-block">
@@ -59,6 +59,7 @@
                         </a>
                         <p class="item-like-score">2</p>
                       </div>
+                      <p class="item-title cost" style="color: {{ $elements['cost_field']->color }}">{{ $item->cost }}&nbsp;{{ $item->currency->symbol() }}</p>
                       <p class="item-series">{{ $item->categories->title }}&nbsp;series</p>
                     </div>
                     <div class="txt-right-block">

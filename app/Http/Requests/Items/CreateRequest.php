@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Items;
 
+use App\Enums\Currency;
 use App\Enums\Palette;
 use App\Enums\Status;
 use Illuminate\Foundation\Http\FormRequest;
@@ -31,9 +32,11 @@ class CreateRequest extends FormRequest
             'description' => ['nullable', 'string'],
             'palette' => ['required', new Enum(Palette::class)],
             'size' => ['nullable', 'string'],
+            'currency' => ['required', new Enum(Currency::class)],
+            'cost' => ['required','numeric', 'min:0'],
             'year' => ['required', 'integer', 'min:1900', 'max:' . date('Y')],
             'file_path' => ['nullable', 'string'],
-            'category_id'=> ['integer'],
+            'category_id'=> ['required', 'integer'],
             'is_new' => ['sometimes'],
             'status' => ['required', new Enum(Status::class)],
         ];
@@ -50,6 +53,8 @@ class CreateRequest extends FormRequest
             'description' => 'Description',
             'palette' => 'Palette',
             'size' => 'Size',
+            'cost' => 'Cost',
+            'currency' => 'Currency',
             'year' => 'Year',
             'category_id' => 'Category',
             'status' => 'Status',

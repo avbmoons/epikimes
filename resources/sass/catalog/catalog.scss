@@ -85,55 +85,6 @@
           @include searchblock('Roboto');
         }
 
-        // .search-block {
-        //   margin: 0 auto;
-        //   //margin-bottom: 40px;
-        //   width: $header-center-width;
-        //   height: 100%;
-        //   @include flex-horizontal();
-        //   //justify-content: flex-end;
-        //   .input-search {
-        //     margin: auto 0;
-        //     width: 80%;
-        //     height: 48px; // 50px;
-        //     //border: 1px solid $color-back-2;
-        //     border-left: 1px solid $color-back-2;
-        //     border-top: 1px solid $color-back-2;
-        //     border-bottom: 1px solid $color-back-2;
-        //     border-right: none;
-        //     //border-radius: 5px;
-        //     border-top-left-radius: 5px;
-        //     border-bottom-left-radius: 5px;
-        //     outline: none;
-        //     line-height: normal;
-        //   }
-        //   .input-search::placeholder {
-        //     padding-left: 10px;
-        //     @include text-font(14px, 300, auto, 0);
-        //     color: $color-grey-light;
-        //   }
-        //   .btn-search {
-        //     margin: auto 0;
-        //     width: 20%;
-        //     height: 50px;
-        //     border-left: none;
-        //     border-right: 1px solid $color-back-2;
-        //     border-top: 1px solid $color-back-2;
-        //     border-bottom: 1px solid $color-back-2;
-        //     //border-radius: 5px;
-        //     border-top-right-radius: 5px;
-        //     border-bottom-right-radius: 5px;
-        //     outline: none;
-        //     background: none;
-        //     cursor: pointer;
-        //     line-height: normal;
-        //   }
-        //   .btn-search:hover {
-        //     svg path {
-        //       stroke: $color-red;
-        //     }
-        //   }
-        // }
         .resource-link-block {
           margin: auto;
           margin-top: $title-margin-top;  // 40px;
@@ -205,7 +156,10 @@
                 @include text-font(16px, 400, auto, 0);
                 color: $color-grey-dark;
                 text-align: left;
-              }              
+              } 
+              .cost {
+                color: $color-red;
+              }             
               .item-series {
                 margin: 0 auto;
                 width: 100%;
@@ -219,6 +173,7 @@
                 height: fit-content;
                 @include flex-horizontal();
                 justify-content: flex-start;
+                display: none;
                 .item-like {
                   padding-left: 10px;
                   @include flex-vertical();

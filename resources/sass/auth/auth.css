@@ -112,7 +112,7 @@
 .form-input-auth {
   margin: 0 auto 20px;
   width: 60%;
-  height: 62vh;
+  height: 67vh;
   border-radius: 5px;
   box-shadow: -10px 10px 5px 0px rgba(0, 0, 0, 0.2), 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
   border-left: 3px solid #5A0402;
@@ -143,7 +143,7 @@
   justify-content: space-between;
 }
 .form-input-auth .input-box-auth .input-lable-auth {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 100%;
   font-size: 1.39vw;
   font-weight: 400;
@@ -352,6 +352,7 @@
   white-space: pre-wrap;
 }
 .form-input-auth .mail-buttons {
+  margin-top: 20px;
   flex-direction: row;
 }
 .form-input-auth .mail-buttons .btn-form-auth {

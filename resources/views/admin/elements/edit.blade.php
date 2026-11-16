@@ -60,7 +60,7 @@
       
       <div class="input-box admin" name="title-box">
         <label for="title" class="input-lable">Title</label>
-        <textarea class="input-text area" name="title" id="title">{{ $element->title }}</textarea>            
+        <textarea class="input-text area editor" name="title" id="title">{{ $element->title }}</textarea>            
       </div> 
       <div class="input-box admin" name="color-box">
         <label for="colorPicker" class="input-lable">Color</label> 

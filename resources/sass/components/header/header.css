@@ -104,6 +104,38 @@ header .header-block .header-right .service-block .service-item {
   margin-right: 30px;
   width: 36px;
   height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header .header-block .header-right .service-block .service-item .service-item-block {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+header .header-block .header-right .service-block .service-item .service-item-block .service-item-link {
+  margin: auto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  color: #453B3A;
+  text-decoration: none;
+}
+header .header-block .header-right .service-block .service-item .service-item-block .active {
+  color: orangered;
+  font-weight: 600;
+}
+header .header-block .header-right .service-block .service-item .service-item-block .link-separator {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: auto;
+  letter-spacing: 0;
+  color: #453B3A;
+}
+header .header-block .header-right .service-block .service-item .service-item-block .service-item-link:hover {
+  color: #c0271e;
 }
 header .header-block .header-right .service-block .last {
   margin-right: 0;

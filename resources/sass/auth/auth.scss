@@ -84,7 +84,8 @@
       justify-content: space-between;
       //border: 1px solid green;
       .input-lable-auth {
-        margin: 0 auto;
+        margin: 20px auto;
+        //margin-top: 20px;
         width: 100%;
         @include text-font(1.39vw, 400, 1.39vw, 0);   // 20px
         @include media-text(14px, 16px, 18px);
@@ -197,6 +198,7 @@
       white-space: pre-wrap;
     } 
     .mail-buttons {
+      margin-top: 20px;
       flex-direction: row;
       //border: 1px solid green;
       .btn-form-auth {

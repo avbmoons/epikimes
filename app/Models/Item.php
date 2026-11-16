@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Currency;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -18,6 +19,8 @@ class Item extends Model
         'description',
         'palette',
         'size',
+        'currency',
+        'cost',
         'year',
         'file_path',
         'category_id',
@@ -27,6 +30,8 @@ class Item extends Model
 
     protected $casts = [
         'color_ids' => 'array',
+        'cost' => 'decimal:2',
+        'currency' => Currency::class,
     ];
 
     public function categories()

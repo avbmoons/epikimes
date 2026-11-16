@@ -37,7 +37,7 @@
           <td>{{ $notification->notifiable_id }}</td>
           <td>{{ $notification->notifiable->name }}</td>
           <td>{{ $notification->data['title'] ?? 'No subject' }}</td>
-          <td>{{ Str::limit($notification->data['message'] ?? '', 90, '...') }}</td>
+          <td class="td-title">{!! Str::limit($notification->data['message'] ?? '', 90, '...') !!}</td>
           {{-- <td>
             <div class="statuses">
               <p>{{ $mail->status }}</p>

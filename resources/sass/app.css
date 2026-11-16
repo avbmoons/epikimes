@@ -120,7 +120,7 @@ header .header-block .header-right .service-block .service-item:hover svg path {
 footer {
   margin: 0;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -140,7 +140,7 @@ footer .btn-up-block:hover svg path {
 footer .footer-block {
   margin: 0 auto;
   width: 89%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -161,7 +161,7 @@ footer .footer-block .footer-left .footer-left-block {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
 }
 footer .footer-block .footer-left .footer-left-block .title-block {
   margin: 0 auto;
@@ -272,12 +272,15 @@ footer .footer-block .footer-right .footer-right-block {
 footer .footer-block .footer-right .footer-right-block .socials-block {
   margin: 0 auto;
   width: 70%;
+  height: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
 }
 footer .footer-block .footer-right .footer-right-block .socials-block .social-icon {
+  margin: auto;
+  margin-right: 0;
   width: 36px;
   height: 36px;
 }
@@ -441,7 +444,7 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
 .wrapper .top main {
   margin: 0;
   width: 100%;
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -606,7 +609,7 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
 .wrapper footer {
   margin: 0;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -626,7 +629,7 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
 .wrapper footer .footer-block {
   margin: 0 auto;
   width: 89%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -647,7 +650,7 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
 }
 .wrapper footer .footer-block .footer-left .footer-left-block .title-block {
   margin: 0 auto;
@@ -758,12 +761,15 @@ footer .footer-block .footer-right .footer-right-block .signature-block .signatu
 .wrapper footer .footer-block .footer-right .footer-right-block .socials-block {
   margin: 0 auto;
   width: 70%;
+  height: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
 }
 .wrapper footer .footer-block .footer-right .footer-right-block .socials-block .social-icon {
+  margin: auto;
+  margin-right: 0;
   width: 36px;
   height: 36px;
 }
@@ -1568,7 +1574,7 @@ footer-admin .footer-block-admin .footer-right .footer-right-block .socials-bloc
 .wrapper .top main {
   margin: 0;
   width: 100%;
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1752,7 +1758,7 @@ footer-admin .footer-block-admin .footer-right .footer-right-block .socials-bloc
 .wrapper footer {
   margin: 0;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1772,7 +1778,7 @@ footer-admin .footer-block-admin .footer-right .footer-right-block .socials-bloc
 .wrapper footer .footer-block {
   margin: 0 auto;
   width: 89%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -1793,7 +1799,7 @@ footer-admin .footer-block-admin .footer-right .footer-right-block .socials-bloc
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
 }
 .wrapper footer .footer-block .footer-left .footer-left-block .title-block {
   margin: 0 auto;
@@ -1904,12 +1910,15 @@ footer-admin .footer-block-admin .footer-right .footer-right-block .socials-bloc
 .wrapper footer .footer-block .footer-right .footer-right-block .socials-block {
   margin: 0 auto;
   width: 70%;
+  height: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
 }
 .wrapper footer .footer-block .footer-right .footer-right-block .socials-block .social-icon {
+  margin: auto;
+  margin-right: 0;
   width: 36px;
   height: 36px;
 }
@@ -2162,7 +2171,7 @@ body {
 .wrapper .top main {
   margin: 0;
   width: 100%;
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2392,6 +2401,9 @@ body {
   color: #453B3A;
   text-align: left;
 }
+.wrapper .top main .catalog-block .catalog-item .item-txt-block .txt-left-block .cost {
+  color: #c0271e;
+}
 .wrapper .top main .catalog-block .catalog-item .item-txt-block .txt-left-block .item-series {
   margin: 0 auto;
   width: 100%;
@@ -2411,6 +2423,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-start;
+  display: none;
 }
 .wrapper .top main .catalog-block .catalog-item .item-txt-block .txt-left-block .item-like-block .item-like {
   padding-left: 10px;
@@ -2474,7 +2487,7 @@ body {
 .wrapper footer {
   margin: 0;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2494,7 +2507,7 @@ body {
 .wrapper footer .footer-block {
   margin: 0 auto;
   width: 89%;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -2515,7 +2528,7 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
 }
 .wrapper footer .footer-block .footer-left .footer-left-block .title-block {
   margin: 0 auto;
@@ -2626,12 +2639,15 @@ body {
 .wrapper footer .footer-block .footer-right .footer-right-block .socials-block {
   margin: 0 auto;
   width: 70%;
+  height: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
 }
 .wrapper footer .footer-block .footer-right .footer-right-block .socials-block .social-icon {
+  margin: auto;
+  margin-right: 0;
   width: 36px;
   height: 36px;
 }
@@ -2942,6 +2958,9 @@ body {
 }
 .add-block .add-box .btn-add .img-add:hover path {
   fill: #EF9C33;
+}
+.add-block .add-box .btn-add .img-delete:hover path {
+  stroke: #EF9C33;
 }
 .add-block .add-box .lable-add {
   margin-right: 30px;
@@ -3446,6 +3465,33 @@ body {
   letter-spacing: 0;
   color: #453B3A;
 }
+.head-block .title-block .title-box .link {
+  margin: 20px auto 20px 20px;
+  padding: 30px 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 2.4vh;
+  font-weight: 300;
+  line-height: 2.4vh;
+  letter-spacing: 0;
+  color: #453B3A;
+  background-color: #d2d0cf;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
+.head-block .title-block .title-box .link:hover {
+  background-color: #b5b0a1;
+}
 .head-block .services-block {
   margin: 0 auto;
   width: 70%;
@@ -3571,6 +3617,9 @@ body {
 .head-block .services-block .services-box .add-block .add-box .btn-add .img-add:hover path {
   fill: #EF9C33;
 }
+.head-block .services-block .services-box .add-block .add-box .btn-add .img-delete:hover path {
+  stroke: #EF9C33;
+}
 .head-block .services-block .services-box .add-block .add-box .lable-add {
   margin-right: 30px;
   padding-left: 1vw;
@@ -3589,6 +3638,16 @@ body {
 }
 .head-block .services-block .services-box .add-block .add-box:hover .lable-add {
   color: #EF9C33;
+}
+
+.page-comments {
+  text-align: center;
+  color: #453B3A;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: auto;
+  letter-spacing: 0;
+  font-style: italic;
 }
 
 .table-block {
@@ -3923,6 +3982,9 @@ body {
 }
 .head-block .services-block .services-box .add-block .add-box .btn-add .img-add:hover path {
   fill: #EF9C33;
+}
+.head-block .services-block .services-box .add-block .add-box .btn-add .img-delete:hover path {
+  stroke: #EF9C33;
 }
 .head-block .services-block .services-box .add-block .add-box .lable-add {
   margin-right: 30px;
@@ -4381,7 +4443,7 @@ body {
 .form-input-auth {
   margin: 0 auto 20px;
   width: 60%;
-  height: 62vh;
+  height: 67vh;
   border-radius: 5px;
   box-shadow: -10px 10px 5px 0px rgba(0, 0, 0, 0.2), 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
   border-left: 3px solid #5A0402;
@@ -4674,6 +4736,10 @@ body {
     min-height: 30vh;
     height: 30vh;
   }
+}
+
+.ck-editor__editable_inline {
+  min-height: 200px;
 }
 
 @font-face {

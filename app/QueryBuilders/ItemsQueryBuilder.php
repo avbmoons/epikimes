@@ -47,6 +47,8 @@ final class ItemsQueryBuilder extends QueryBuilder
             ->orWhere('description', 'LIKE', "%{$search}%")
             ->orWhere('palette', 'LIKE', "%{$search}%")
             ->orWhere('size', 'LIKE', "%{$search}%")
+            ->orWhere('currency', 'LIKE', "%{$search}%")
+            ->orWhere('cost', 'LIKE', "%{$search}%")
             ->orWhere('year', 'LIKE', "%{$search}%")
             ->orWhere('status', 'LIKE', "%{$search}%")
             // ->orWhereHas('categories', function($categoryQuery) use ($search) {
@@ -63,6 +65,7 @@ final class ItemsQueryBuilder extends QueryBuilder
       });
     })
     ->orderBy('id', 'asc')
+    //->orderBy('id', 'desc')
     ->get();
     //->paginate($quantity)
     //->withQueryString();
@@ -84,7 +87,7 @@ final class ItemsQueryBuilder extends QueryBuilder
     return $this->model
         ->join('item_has_colors', 'items.id', '=', 'item_has_colors.item_id')
         ->join('colors', 'item_has_colors.color_id', '=', 'colors.id')
-        ->select('items.id', 'items.title', 'items.description', 'items.palette', 'items.size', 'items.year', 'items.file_path', 'items.category_id', 'items.is_new', 'items.status',)
+        ->select('items.id', 'items.title', 'items.description', 'items.palette', 'items.size', 'items.currency', 'items.cost', 'items.year', 'items.file_path', 'items.category_id', 'items.is_new', 'items.status',)
         ->orderBy('items.id')
         ->get();
   }
@@ -131,6 +134,8 @@ final class ItemsQueryBuilder extends QueryBuilder
             ->orWhere('description', 'LIKE', "%{$search}%")
             ->orWhere('palette', 'LIKE', "%{$search}%")
             ->orWhere('size', 'LIKE', "%{$search}%")
+            ->orWhere('currency', 'LIKE', "%{$search}%")
+            ->orWhere('cost', 'LIKE', "%{$search}%")
             ->orWhere('year', 'LIKE', "%{$search}%")
             ->orWhere('status', 'LIKE', "%{$search}%")
             // ->orWhereHas('categories', function($categoryQuery) use ($search) {

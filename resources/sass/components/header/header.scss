@@ -89,7 +89,41 @@
             margin-right: 30px;
             width: 36px;
             height: 36px;
+            @include flex-vertical();
             //border: 1px solid blue;
+            .service-item-block {
+              @include flex-horizontal();
+              .service-item-link {
+              margin: auto;
+              @include text-font(20px, 400, auto, 0);
+              color: $color-grey-dark;
+              text-decoration: none;
+              }
+              .active {
+                color: orangered;
+                font-weight: 600;
+              }
+              .link-separator {
+                @include text-font(20px, 400, auto, 0);
+                color: $color-grey-dark;
+              }
+              .service-item-link:hover {
+                color: $color-red;
+              }
+            }
+            // .service-item-link {
+            //   margin: auto;
+            //   @include text-font(20px, 400, auto, 0);
+            //   color: $color-grey-dark;
+            //   text-decoration: none;
+            // }
+            // .link-separator {
+            //   @include text-font(20px, 400, auto, 0);
+            //   color: $color-grey-dark;
+            // }
+            // .service-item-link:hover {
+            //   color: $color-red;
+            // }
           }
           .last {
             margin-right: 0;

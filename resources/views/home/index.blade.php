@@ -12,12 +12,13 @@
         <div class="greeting-block" id="greetingBlock">
           <div class="title-link-block">
             @if (isset($elements['title_link_catalog']) && $elements['title_link_catalog']->is_visible)
-              <a href="pages/catalog.html" class="title-link" id="titleLinkCatalog" style="color: {{ $elements['title_link_catalog']->color }}">{{ $elements['title_link_catalog']->title }}</a>
+              <a href="{{ route('catalog') }}" class="title-link" id="titleLinkCatalog" style="color: {{ $elements['title_link_catalog']->color }}">{!! $elements['title_link_catalog']->title !!}</a>
             @endif
           </div>
           <div class="greeting-text-block">            
             @if (isset($elements['welcome_text']) && $elements['welcome_text']->is_visible)
-              <p class="greeting-text" id="welcomeText" style="color: {{ $elements['title_link_catalog']->color }}">{{ $elements['welcome_text']->title }}</p>               
+              <div class="greeting-text" id="welcomeText" style="color: {{ $elements['welcome_text']->color }}">{!! $elements['welcome_text']->title !!}</div>
+              {{-- <p class="greeting-text" id="welcomeText" style="color: {{ $elements['welcome_text']->color }}">{!! $elements['welcome_text']->title !!}</p>                --}}
             @endif            
           </div>
           <div class="resource-link-block">
@@ -37,7 +38,7 @@
             <a href="#newImagesBlock" class="title-link" id="titleNews" style="color: {{ $elements['title_news']->color }}">
               {{-- New arts --}}
               @if (isset($elements['title_news']) && $elements['title_news']->is_visible)
-              {{ $elements['title_news']->title }}                
+              {!! $elements['title_news']->title !!}
               @endif
             </a>
           </div>          

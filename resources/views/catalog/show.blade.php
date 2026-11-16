@@ -18,7 +18,7 @@
       <p class="text-series">{{ $item->categories->title }}&nbsp;series</p>
     </div>
     <div class="text-center">
-      <p class="text-description">{{ $item->description }}</p>
+      <p class="text-description">{!! $item->description !!}</p>
     </div>
     <div class="text-right">
       <p class="text-other">{{ $item->palette }}</p>

@@ -36,7 +36,7 @@
           {{-- <td>{{ $mail->user_id }}</td> --}}
           <td>{{ $mail->username }}</td>
           <td>{{ $mail->email }}</td>
-          <td>{{ Str::limit($mail->description, 100) }}</td>
+          <td class="td-title">{!! Str::limit($mail->description, 100) !!}</td>
           <td>
             <div class="statuses">
               <p>{{ $mail->status }}</p>

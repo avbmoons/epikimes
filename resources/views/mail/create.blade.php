@@ -25,7 +25,7 @@
     </div>
     <div class="input-box-auth" name="description-box">
         <label for="description" class="input-lable-auth">{{ __('Description') }}</label>
-        <textarea class="input-text-auth area" name="description" id="description" autofocus></textarea>            
+        <textarea class="input-text-auth area editor" name="description" id="description" autofocus></textarea>            
     </div>
     <div class="input-box-auth">
       <label class="input-lable-auth" hidden>Status</label>            

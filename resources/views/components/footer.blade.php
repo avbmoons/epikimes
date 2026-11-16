@@ -9,11 +9,11 @@
   <div class="footer-block">
     <div class="footer-left">
       <div class="footer-left-block">
-        <div class="title-block">
+        {{-- <div class="title-block">
               <p class="send-title">Send message:</p>
-        </div>
+        </div> --}}
         <div class="title-block">
-          <p class="copyrights" id="copyrights">&copy; 
+          <p class="copyrights" id="copyrights" style="color: {{ $footerElements['copyrights_owner']->color }}">&copy; 
             @if (isset($footerElements['copyrights_owner']) &&  $footerElements['copyrights_owner']->is_visible)
             {{ $footerElements['copyrights_owner']->title }}
             @endif
@@ -27,8 +27,8 @@
     </div>
     <div class="footer-center">
       <div class="footer-center-block">
-        <textarea name="message-footer" id="messageFooter" class="message-footer" placeholder="write a message to the author here ..."></textarea>
-        <button type="button" class="btn-send-footer">Send</button>            
+        {{-- <textarea name="message-footer" id="messageFooter" class="message-footer" placeholder="write a message to the author here ..."></textarea>
+        <button type="button" class="btn-send-footer">Send</button>             --}}
       </div>
     </div>
     <div class="footer-right">

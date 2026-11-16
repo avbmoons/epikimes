@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\Currency;
 use App\Enums\Palette;
 use App\Enums\Status;
 use App\Http\Controllers\Controller;
@@ -40,6 +41,7 @@ class CatalogController extends Controller
             'colors' => $colorsQueryBuilder->getAll(),
             'statuses' => Status::all(),
             'palettes' => Palette::all(),
+            'currency' => Currency::all(),
         ]);
     }
 
@@ -89,6 +91,7 @@ class CatalogController extends Controller
     {
         $statuses = Status::all();
         $palettes = Palette::all();
+        $currency = Currency::all();
 
         return view('admin.catalog.edit', [
             'item' => $catalog,
@@ -96,6 +99,7 @@ class CatalogController extends Controller
             'colors' => $colorsQueryBuilder->getAll(),
             'statuses' => $statuses,
             'palettes' => $palettes,
+            'currency' => $currency,
         ]);
     }
 
@@ -113,9 +117,9 @@ class CatalogController extends Controller
         $data['is_new'] = $request->has('is_new') ? 1 : 0;
 
         if ($request->hasFile('image')) {
-            if ($item->file_path && Storage::disk('public')->exists('catalog/' . $item->file_path)) {
-                Storage::disk('public')->delete('catalog/' . $item->file_path);
-            }
+            // if ($item->file_path && Storage::disk('public')->exists('catalog/' . $item->file_path)) {
+            //     Storage::disk('public')->delete('catalog/' . $item->file_path);
+            // }
             $file = $request->file('image');
             $fileName = $file->getClientOriginalName();
 

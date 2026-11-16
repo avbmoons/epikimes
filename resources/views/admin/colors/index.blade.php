@@ -42,7 +42,7 @@
               border: 1px solid #ccc; 
               border-radius: 3px;">
             </span>&nbsp;
-            {{ $color->description }}
+            {!! $color->description !!}
           </td>
           {{-- <td>
             <div class="statuses">

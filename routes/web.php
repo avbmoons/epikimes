@@ -17,6 +17,7 @@ use App\Http\Controllers\MailController;
 use App\Notifications\WelcomeNotification;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,9 +85,12 @@ Route::get('/test-welcome', function () {
             'error' => 'Error mail sending',
             'message' => $e->getMessage()
         ]);
-    }
-
-    
-
-    
+    }    
 });
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['ru', 'en'])) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('lang.switch');

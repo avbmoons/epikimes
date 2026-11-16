@@ -42,7 +42,7 @@
       </div>
       <div class="input-box admin" name="description-box">
         <label for="description" class="input-lable">Description</label>
-        <textarea class="input-text area" name="description" id="description">{{ old('description', $item->description) }}</textarea>            
+        <textarea class="input-text area editor" name="description" id="description">{{ old('description', $item->description) }}</textarea>            
       </div>
       <div class="input-group admin">
         <div class="input-box middle" name="category-box">
@@ -74,6 +74,22 @@
         <div class="input-box middle" name="year-box">
           <label for="itemYear" class="input-lable">Year</label>            
           <input type="number" class="input-text" name="year" id="itemYear" value="{{ old('year', $item->year) }}" @error('year') is-invalid @enderror>              
+        </div> 
+      </div>
+      <div class="input-group admin">
+        <div class="input-box middle" name="cost-box">
+          <label for="cost" class="input-lable">Cost</label>            
+          <input type="number" class="input-text" name="cost" id="cost" step="0.01" min="0" value="{{ old('cost', $item->cost) }}" @error('cost') is-invalid @enderror>              
+        </div>
+        <div class="input-box middle" name="currency-box">
+          <label for="currency" class="input-lable">Currency</label>
+          <select class="input-text" name="currency" id="currency">
+              @foreach ($currency as $curr => $symbol)
+                 {{-- <option @if(old('currency') === $curr) selected @endif>{{ $curr }}</option>  --}}
+                 <option value="{{ $curr }}" @selected(old('currency', $item->currency) === $curr)>{{ $symbol }}</option>
+              @endforeach              
+          </select>            
+          {{-- <input type="number" class="input-text" name="currency" id="itemCurrency" value="{{ old('year') }}" @error('year') is-invalid @enderror>               --}}
         </div> 
       </div>
       <div class="input-box admin" name="image-box">

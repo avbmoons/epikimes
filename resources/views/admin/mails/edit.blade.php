@@ -38,7 +38,7 @@
       </div>
       <div class="input-box" name="description-box">
         <label for="description" class="input-lable">Description</label>
-        <textarea class="input-text area" name="description" id="description" autofocus style="min-height: 20vh">{{ $mail->description }}</textarea>            
+        <textarea class="input-text area editor" name="description" id="description" autofocus style="min-height: 20vh">{{ $mail->description }}</textarea>            
       </div>     
       <div class="input-box" name="image-box">
         <div class="input-group">

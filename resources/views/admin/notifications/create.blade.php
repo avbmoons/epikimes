@@ -48,7 +48,7 @@
       </div>
       <div class="input-box" name="description-box">
         <label for="content" class="input-lable">Message</label>
-        <textarea class="input-text area" name="content" id="content">{{ old('content') }}</textarea>            
+        <textarea class="input-text area editor" name="content" id="content">{{ old('content') }}</textarea>            
       </div>     
       <div class="input-box" name="btns-box">
         <div class="input-group">
